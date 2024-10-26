@@ -1,8 +1,6 @@
-# Equipe3-Time4-PROA
+# Vooaz - O mundo é para todos ✈️
 
-Time 4 - DEMODAY
-
-## Integrantes
+## Equipe Vooaz
 - Heloisa Mendes
 - Danilo Alcantara
 - Iury Sven
