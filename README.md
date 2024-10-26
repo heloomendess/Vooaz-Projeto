@@ -6,5 +6,6 @@
 - Iury Sven
 - Gustavo Cunha
 - Kawan Barbosa
+- Célio Amorim
 - Mariana Paiva
 - Grazielly Cavalcante
