@@ -13,7 +13,7 @@ db.planos.insertMany([
     },
     {
       "_id": ObjectId("645aede1f5564331f0e7cc07"),
-      "nome_plano": "Voo Explorar",
+      "nome_plano": "Explorador",
       "mensalidade": 29.99,
       "anual": 359.88,
       "beneficios": [
@@ -26,7 +26,7 @@ db.planos.insertMany([
     },
     {
       "_id": ObjectId("645aede1f5564331f0e7cc08"),
-      "nome_plano": "Voo Sem Fronteiras",
+      "nome_plano": "Sem Fronteiras",
       "mensalidade": 149.99,
       "anual": 1199,
       "beneficios": [
