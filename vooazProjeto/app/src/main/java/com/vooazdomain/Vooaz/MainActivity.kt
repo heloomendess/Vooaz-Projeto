@@ -27,6 +27,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextDecoration
@@ -65,14 +66,14 @@ class MainActivity : ComponentActivity() {
 fun ContentChoices(){
     Column (modifier = Modifier
         .fillMaxSize()
-        .padding(top = 400.dp, end = 50.dp), verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally){
-        Text(text = "Explore nossos \nplanos!", fontSize = 36.sp, color = Color(0xFFF4B942), fontWeight = FontWeight.Bold, maxLines = 2, lineHeight = 40.sp)
+        .padding(top = 400.dp, end = 40.dp), verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally){
+        Text(stringResource(R.string.explorarPlanos), fontSize = 36.sp, color = Color(0xFFF4B942), fontWeight = FontWeight.Bold, maxLines = 2, lineHeight = 40.sp)
         Button(onClick = { /*TODO*/ }, modifier = Modifier
             .padding(top = 20.dp, start = 50.dp)
             .size(width = 250.dp, height = 50.dp), colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF97D8C4))){
-            Text("conhecer Premium", fontSize = 25.sp, fontWeight = FontWeight.Bold, color = Color.Black)
+            Text(stringResource(R.string.conhecerPlanos), fontSize = 25.sp, fontWeight = FontWeight.Bold, color = Color.Black)
         }
-        Text(text = "Deixar para depois", textDecoration = TextDecoration.Underline, color = Color.White, fontWeight = FontWeight.Bold, modifier = Modifier.padding(top = 8.dp, start = 40.dp))
+        Text(stringResource(R.string.deixarParaDepois), textDecoration = TextDecoration.Underline, color = Color.White, fontWeight = FontWeight.Bold, modifier = Modifier.padding(top = 8.dp, start = 40.dp))
     }
 }
 @Composable
@@ -87,7 +88,7 @@ fun BackgroundAirport(
 
         Image(
             painter = painterResource(R.drawable.background_airport),
-            contentDescription = "Airport image to background ",
+            contentDescription = "Imagem de aeroporto",
             modifier = Modifier
                 .fillMaxSize()
                 .padding(bottom = 200.dp)

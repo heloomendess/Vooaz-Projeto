@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Vooaz</string>
+    <string name="explorarPlanos">Explore nossos
+\nplanos!</string>
+    <string name="conhecerPlanos">conhecer Premium</string>
+    <string name="deixarParaDepois">Deixar para depois</string>
+
 </resources>
