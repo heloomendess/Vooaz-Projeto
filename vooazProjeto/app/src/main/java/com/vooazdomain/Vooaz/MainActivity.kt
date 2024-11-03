@@ -40,6 +40,8 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import com.vooazdomain.Vooaz.telas.InputScreen
+
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -54,9 +56,7 @@ class MainActivity : ComponentActivity() {
         }
         setContent {
             VooazTheme() {
-                    BackgroundAirport()
-                ContentChoices()
-
+                    InputScreen()
             }
         }
     }
@@ -70,7 +70,7 @@ fun ContentChoices(){
         Button(onClick = { /*TODO*/ }, modifier = Modifier
             .padding(top = 20.dp, start = 50.dp)
             .size(width = 250.dp, height = 50.dp), colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF97D8C4))){
-            Text("conhecer Premium", fontSize = 25.sp, fontWeight = FontWeight.Bold, color = Color.Black)
+            Text("conhecer Premium", fontSize = 20.sp, fontWeight = FontWeight.Bold, color = Color.Black)
         }
         Text(text = "Deixar para depois", textDecoration = TextDecoration.Underline, color = Color.White, fontWeight = FontWeight.Bold, modifier = Modifier.padding(top = 8.dp, start = 40.dp))
     }
@@ -103,5 +103,6 @@ fun BackgroundAirport(
 fun GreetingPreview() {
     VooazTheme {
         BackgroundAirport()
+        ContentChoices()
     }
 }
