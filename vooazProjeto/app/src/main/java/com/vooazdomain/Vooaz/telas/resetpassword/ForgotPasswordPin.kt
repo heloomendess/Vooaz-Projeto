@@ -1,4 +1,4 @@
-package com.vooazdomain.Vooaz.telas
+package com.vooazdomain.Vooaz.telas.resetpassword
 
 import android.widget.Toast
 import androidx.compose.foundation.Image
