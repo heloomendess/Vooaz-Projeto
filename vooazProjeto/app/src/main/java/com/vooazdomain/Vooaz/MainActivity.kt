@@ -13,10 +13,10 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import com.vooazdomain.Vooaz.telas.InputScreen
 import com.vooazdomain.Vooaz.telas.PlanScreenSuggestion
-import com.vooazdomain.Vooaz.telas.ForgotPassword
-import com.vooazdomain.Vooaz.telas.ForgotPasswordPin
+import com.vooazdomain.Vooaz.telas.resetpassword.ForgotPassword
+import com.vooazdomain.Vooaz.telas.resetpassword.ForgotPasswordPin
+import com.vooazdomain.Vooaz.telas.resetpassword.ChangePasswordScreen
 
 
 class MainActivity : ComponentActivity() {
@@ -33,7 +33,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             VooazTheme() {
                 val navController = rememberNavController()
-                NavHost(navController= navController , startDestination = "ForgotPasswordPin") {
+                NavHost(navController= navController , startDestination = "ChangePasswordScreen") {
 
                     composable("PlanScreenSuggestion") {
                         PlanScreenSuggestion(navController)
@@ -44,6 +44,9 @@ class MainActivity : ComponentActivity() {
                     composable("ForgotPasswordPin") {
                         ForgotPasswordPin(navController)
                         
+                    }
+                    composable("ChangePasswordScreen"){
+                        ChangePasswordScreen(navController)
                     }
                 }
 
