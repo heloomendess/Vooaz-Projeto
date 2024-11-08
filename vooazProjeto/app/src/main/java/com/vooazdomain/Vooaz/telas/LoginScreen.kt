@@ -3,6 +3,7 @@ package com.vooazdomain.Vooaz.telas
 import android.graphics.BlurMaskFilter.Blur
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -45,6 +46,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.vooazdomain.Vooaz.R
 import com.vooazdomain.Vooaz.ui.theme.VooazTheme
 
@@ -61,14 +63,14 @@ fun BackgroundColorLogin() {
 }
 
 @Composable
-fun ContentLoginScreen() {
+fun ContentLoginScreen(navController: NavController) {
     var email by remember { mutableStateOf("") }
     var senha  by remember { mutableStateOf("") }
     Box(
         modifier = Modifier.fillMaxSize(),
 
         ){
-        Icon(Icons.Filled.Close, contentDescription = "Voltar", modifier = Modifier.size(50.dp).padding(top=10.dp))}
+        Icon(Icons.Filled.Close, contentDescription = "Voltar", modifier = Modifier.size(50.dp).padding(top=25.dp).clickable { navController.popBackStack() })}
         Column(
             modifier = Modifier.fillMaxWidth().fillMaxHeight().padding(top = 200.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
@@ -93,7 +95,7 @@ fun ContentLoginScreen() {
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password), leadingIcon  = {
                 Icon(Icons.Filled.Lock,"", tint =Color(0xFFFF9E00), modifier = Modifier.size(30.dp) )
             })
-            Text("esqueci minha senha", fontSize = 12.sp, textDecoration = TextDecoration.Underline, fontWeight = FontWeight.Bold, color = Color(0xFFFF9E00), modifier = Modifier.padding(end= 170.dp))
+            Text("esqueci minha senha", fontSize = 12.sp, textDecoration = TextDecoration.Underline, fontWeight = FontWeight.Bold, color = Color(0xFFFF9E00), modifier = Modifier.padding(end= 170.dp).clickable { navController.navigate("ForgotPassword") })
             Button( onClick = {},
                 shape =   RoundedCornerShape(10.dp),
                 modifier = Modifier.padding(top = 30.dp).width(310.dp).height(50.dp),
@@ -139,7 +141,7 @@ fun LoginScreen(navController: NavController) {
     VooazTheme {
 
         IconsVooazLogin()
-        ContentLoginScreen()
+        ContentLoginScreen(navController)
     }
 }
 
@@ -149,6 +151,6 @@ fun LoginPreview() {
     VooazTheme {
 
         IconsVooazLogin()
-        ContentLoginScreen()
+        ContentLoginScreen(rememberNavController())
     }
 }

@@ -8,6 +8,7 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.vooazdomain.Vooaz.telas.InputScreen
 import com.vooazdomain.Vooaz.telas.LoginScreen
 import com.vooazdomain.Vooaz.ui.theme.VooazTheme
 import kotlinx.coroutines.CoroutineScope
@@ -35,7 +36,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             VooazTheme() {
                 val navController = rememberNavController()
-                NavHost(navController= navController , startDestination = "RegisterAccountScreen") {
+                NavHost(navController= navController , startDestination = "PlanScreenSuggestion") {
 
                     composable("PlanScreenSuggestion") {
                         PlanScreenSuggestion(navController)
@@ -55,6 +56,9 @@ class MainActivity : ComponentActivity() {
                     }
                     composable("RegisterAccountScreen"){
                         ResgisterAccount(navController)
+                    }
+                    composable("InputScreen"){
+                        InputScreen(navController)
                     }
                 }
 

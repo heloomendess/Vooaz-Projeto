@@ -2,6 +2,7 @@ package com.vooazdomain.Vooaz.telas.resetpassword
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -39,6 +40,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.vooazdomain.Vooaz.R
 import com.vooazdomain.Vooaz.ui.theme.VooazTheme
 
@@ -74,7 +76,7 @@ fun IconsVooazChangePasswordScreen() {
     }
 }
 @Composable
-fun ContentChangePasswordScreen(){
+fun ContentChangePasswordScreen(navController: NavController){
     var password by remember { mutableStateOf("")}
     var confirmPassword by remember { mutableStateOf("")}
 
@@ -85,7 +87,7 @@ fun ContentChangePasswordScreen(){
         modifier = Modifier.fillMaxSize(),
 
         ){
-        Icon(Icons.Filled.Close, contentDescription = "Voltar", modifier = Modifier.size(50.dp).padding(top=10.dp))}
+        Icon(Icons.Filled.Close, contentDescription = "Voltar", modifier = Modifier.size(50.dp).padding(top=20.dp).clickable { navController.popBackStack() })}
     Column (
         modifier = Modifier.fillMaxHeight().fillMaxWidth().padding(top = 80.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -102,7 +104,10 @@ fun ContentChangePasswordScreen(){
             Icon(Icons.Filled.Lock,"", tint =Color(0xFFFF9E00), modifier = Modifier.size(30.dp) )
         }, label = {Text("Confirmar Senha")})
 
-        Button( onClick ={},
+        Button( onClick ={
+
+            navController.navigate("InputScreen")
+        },
             shape =   RoundedCornerShape(20.dp),
             modifier = Modifier.padding(top = 30.dp).width(200.dp).height(50.dp),
             colors =  ButtonDefaults.buttonColors(containerColor = Color(0xFFF4B942)),
@@ -115,7 +120,7 @@ fun ContentChangePasswordScreen(){
 fun ChangePasswordScreen(navController: NavController) {
     VooazTheme {
         IconsVooazChangePasswordScreen()
-        ContentChangePasswordScreen()
+        ContentChangePasswordScreen(navController)
 
 
     }
@@ -127,7 +132,7 @@ fun ChangePasswordScreenPreview() {
     VooazTheme {
 
         IconsVooazChangePasswordScreen()
-        ContentChangePasswordScreen()
+        ContentChangePasswordScreen(rememberNavController())
 
     }
 }
