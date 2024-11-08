@@ -3,6 +3,8 @@ package com.vooazdomain.Vooaz.telas.resetpassword
 import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
+
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -39,6 +41,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.vooazdomain.Vooaz.R
 import com.vooazdomain.Vooaz.componentes.ComposePinInput
 import com.vooazdomain.Vooaz.componentes.ComposePinInputStyle
@@ -46,7 +49,7 @@ import com.vooazdomain.Vooaz.componentes.ComposePinInputStyle
 @Composable
 fun ForgotPasswordPin(navController: NavController){
     BackgroundForgotPasswordPin()
-    ContentForgotPasswordPin()
+    ContentForgotPasswordPin(navController)
 }
 @Composable
 fun BackgroundForgotPasswordPin(){
@@ -61,14 +64,14 @@ fun BackgroundForgotPasswordPin(){
 }
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ContentForgotPasswordPin(){
+fun ContentForgotPasswordPin(navController: NavController){
     var pin by remember { mutableStateOf("") }
     val context = LocalContext.current
     Box(
         modifier = Modifier.fillMaxSize(),
 
         ){
-        Icon(Icons.Filled.Close, contentDescription = "Voltar", modifier = Modifier.size(50.dp).padding(top=10.dp))}
+        Icon(Icons.Filled.Close, contentDescription = "Voltar", modifier = Modifier.size(50.dp).padding(top=20.dp).clickable { navController.popBackStack() })}
 
     Column(
         modifier= Modifier.fillMaxHeight().fillMaxWidth().padding(top=230.dp),
@@ -97,7 +100,9 @@ fun ContentForgotPasswordPin(){
             )
         }
 
-        Button( onClick = {},
+        Button( onClick = {
+            navController.navigate("ChangePasswordScreen")
+        },
             shape =   RoundedCornerShape(20.dp),
             modifier = Modifier.padding(top = 30.dp).width(200.dp).height(50.dp),
             colors =  ButtonDefaults.buttonColors(containerColor = Color(0xFFF4B942)),
@@ -114,6 +119,6 @@ fun ContentForgotPasswordPin(){
 @Composable
 fun ForgotPasswordPinPreview(){
     BackgroundForgotPasswordPin()
-    ContentForgotPasswordPin()
+    ContentForgotPasswordPin(rememberNavController())
 
 }

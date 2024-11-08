@@ -2,11 +2,13 @@ package com.vooazdomain.Vooaz.telas
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -15,6 +17,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material.icons.filled.Person
@@ -48,6 +51,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.vooazdomain.Vooaz.R
 
 
@@ -64,20 +68,28 @@ fun BackgroundColorRegisterAccountScreen() {
 }
 
 @Composable
-fun RegisterAccountContent(){
+fun RegisterAccountContent(navController: NavController){
     var name by remember { mutableStateOf("") }
     var email by remember { mutableStateOf("") }
     var password  by remember { mutableStateOf("") }
     var checked by remember { mutableStateOf(true) }
-    Column {
+Box(){
+    Icon(Icons.Filled.Close, contentDescription = "Voltar", modifier = Modifier.size(70.dp).padding(top=25.dp).clickable { navController.popBackStack() })
+}
+    Column (
+        modifier = Modifier.fillMaxSize(),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+
         Row(
-            modifier = Modifier.fillMaxWidth().padding(top=20.dp),
+            modifier = Modifier.fillMaxWidth().padding(bottom = 15.dp),
             horizontalArrangement = Arrangement.Center
         ) {
             Text("Criar conta usando:", fontSize = 18.sp, color = Color(0xFFF4B942), fontWeight = FontWeight.Bold)
         }
         Row(
-            modifier = Modifier.padding(top = 15.dp).fillMaxWidth(),
+            modifier = Modifier.padding(bottom = 15.dp).fillMaxWidth(),
             horizontalArrangement = Arrangement.Center
 
         ) {
@@ -85,7 +97,7 @@ fun RegisterAccountContent(){
             Image(
                 painterResource(R.drawable.google),
                 contentDescription = "Google logo",
-                modifier = Modifier.size(60.dp).padding(end = 30.dp, bottom = 20.dp)
+                modifier = Modifier.size(60.dp).padding(end = 20.dp, bottom = 20.dp)
             )
             Image(
                 painterResource(R.drawable.instagram),
@@ -115,7 +127,7 @@ fun RegisterAccountContent(){
             )
 
             TextField(
-                label = {Text("Nome")},
+
                 value = name,
                 onValueChange = { name = it },
                 modifier = Modifier.width(310.dp).height(50.dp),
@@ -137,7 +149,7 @@ fun RegisterAccountContent(){
                 )
 
                 TextField(
-            label = {Text("Email")},
+
             value = email,
             onValueChange = { email = it },
             modifier = Modifier.width(310.dp).height(50.dp),
@@ -155,7 +167,7 @@ fun RegisterAccountContent(){
                 color = Color(0xFFF4B942),
                 modifier = Modifier.align(Alignment.Start).padding(start = 40.dp, top = 20.dp, bottom = 2.dp)
             )
-        TextField(label = {Text("Senha")},value = password , onValueChange = { password = it }, modifier = Modifier.width(310.dp).height(50.dp),  shape = RoundedCornerShape(8.dp), visualTransformation = PasswordVisualTransformation(),
+        TextField(value = password , onValueChange = { password = it }, modifier = Modifier.width(310.dp).height(50.dp),  shape = RoundedCornerShape(8.dp), visualTransformation = PasswordVisualTransformation(),
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password), leadingIcon  = {
                 Icon(Icons.Filled.Lock,"", tint =Color(0xFFFF9E00), modifier = Modifier.size(30.dp) )
             })
@@ -164,54 +176,6 @@ fun RegisterAccountContent(){
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
 
-                HorizontalDivider(thickness = 1.dp, color = Color.Black)
-                Text(
-                    " Digite sua Senha ",
-                    fontSize = 18.sp,
-                    color = Color(0xFFF4B942),
-                    fontWeight = FontWeight.Bold,
-                    modifier = Modifier.padding(top = 10.dp)
-                )
-                Text(
-                    "Sua senha deve conter: ",
-                    fontSize = 22.sp,
-                    color = Color(0xFFF4B942),
-                    fontWeight = FontWeight.Bold,
-                    modifier = Modifier.align(Alignment.Start).padding(top=8.dp, start = 15.dp)
-                )
-                Row(
-                    modifier = Modifier.align(Alignment.Start).padding(start=20.dp, top = 5.dp)
-                ){
-                    Image(painterResource(R.drawable.checkmarkdisable), contentDescription = "checkin desabilitado", modifier = Modifier.size(18.dp).padding(end=6.dp))
-                Text(
-                    "No mínimo 6 caracteres",
-                    fontSize = 12.sp,
-                    color = Color.White,
-                    fontStyle = FontStyle.Italic,
-
-                )}
-                Row(
-                    modifier = Modifier.align(Alignment.Start).padding(start=20.dp, top = 5.dp)
-                ){
-                    Image(painterResource(R.drawable.checkmarkdisable), contentDescription = "checkin desabilitado", modifier = Modifier.size(18.dp).padding(end=6.dp))
-                Text(
-                    "Letras maiúsculas (A-Z) e minúsculas (a-z)",
-                    fontSize = 12.sp,
-                    color = Color.White,
-                    fontStyle = FontStyle.Italic,
-
-                )}
-                Row(
-                    modifier = Modifier.align(Alignment.Start).padding(start=20.dp, top = 5.dp)
-                ){
-                    Image(painterResource(R.drawable.checkmarkdisable), contentDescription = "checkin desabilitado", modifier = Modifier.size(18.dp).padding(end=6.dp))
-                Text(
-                    "Contém pelo menos 1 número ou caractere especial",
-                    fontSize = 12.sp,
-                    color = Color.White,
-                    fontStyle = FontStyle.Italic,
-
-                )}
 
                 Row(
                     verticalAlignment = Alignment.CenterVertically,
@@ -242,7 +206,7 @@ fun RegisterAccountContent(){
                 }
                 Button( onClick = {},
                     shape =   RoundedCornerShape(10.dp),
-                    modifier = Modifier.padding(top = 5.dp).width(310.dp).height(50.dp),
+                    modifier = Modifier.padding(top = 10.dp).width(310.dp).height(50.dp),
                     colors =  ButtonDefaults.buttonColors(containerColor = Color(0xFFF4B942)),
                 ) {
                     Text("Entrar", fontWeight = FontWeight.Bold, fontSize = 20.sp)
@@ -254,12 +218,12 @@ fun RegisterAccountContent(){
 @Composable
 fun ResgisterAccount(navController: NavController){
     BackgroundColorRegisterAccountScreen()
-    RegisterAccountContent()
+    RegisterAccountContent(navController)
 }
 
 @Preview(showBackground = true, widthDp = 390, heightDp = 800)
 @Composable
 fun ResgisterAccountPreview(){
     BackgroundColorRegisterAccountScreen()
-    RegisterAccountContent()
+    RegisterAccountContent(rememberNavController())
 }

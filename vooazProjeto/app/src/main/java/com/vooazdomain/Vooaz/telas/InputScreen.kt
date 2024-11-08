@@ -29,6 +29,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.vooazdomain.Vooaz.R
 import com.vooazdomain.Vooaz.ui.theme.VooazTheme
 
@@ -47,7 +49,7 @@ fun BackgroundColor() {
 }
 
 @Composable
-fun InputChoicesButtom() {
+fun InputChoicesButtom(navController: NavController) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -56,7 +58,7 @@ fun InputChoicesButtom() {
         verticalArrangement = Arrangement.Center
     ) {
         Button(
-            onClick = { /*TODO*/ },
+            onClick = { navController.navigate(route = "RegisterAccountScreen" ) },
             modifier = Modifier
                 .width(300.dp)
                 .height(90.dp).padding(bottom = 10.dp),
@@ -66,7 +68,7 @@ fun InputChoicesButtom() {
             Text("Cadastro", fontSize = 20.sp, fontWeight = FontWeight.Bold)
         }
         Button(
-            onClick = { /*TODO*/ },
+            onClick = { navController.navigate(route = "LoginScreen" ) },
             modifier = Modifier
                 .width(300.dp)
                 .height(90.dp)
@@ -111,11 +113,11 @@ fun ButtomText(){
 }
 
 @Composable
-fun InputScreen() {
+fun InputScreen(navController: NavController) {
     VooazTheme {
         BackgroundColor()
         IconsVooaz()
-        InputChoicesButtom()
+        InputChoicesButtom(navController)
         ButtomText()
     }
 }
@@ -124,9 +126,6 @@ fun InputScreen() {
 @Composable
 fun InputScreenPreview() {
     VooazTheme {
-        InputScreen()
-        IconsVooaz()
-        InputChoicesButtom()
-        ButtomText()
+        InputScreen(rememberNavController())
     }
 }
