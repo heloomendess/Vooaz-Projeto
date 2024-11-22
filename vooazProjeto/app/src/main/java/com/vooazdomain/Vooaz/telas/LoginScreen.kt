@@ -63,7 +63,8 @@ fun BackgroundColorLogin() {
 }
 
 @Composable
-fun ContentLoginScreen(navController: NavController) {
+fun ContentLoginScreen(navController: NavController
+) {
     var email by remember { mutableStateOf("") }
     var senha  by remember { mutableStateOf("") }
     Box(
