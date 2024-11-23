@@ -7,7 +7,7 @@
 
 <h2> 🎯 Objetivo:</h2>
    <p>
-     Nosso Objetivo, é criar um aplicativo voltado para pessoas com deficiência auditiva ou visual, que estão a procura de expandir seus horizontes. Buscamos tornar viagens mais acessíveis e inclusivas para esse público, através de guias especializados e uma comunidade interativa, voltada para a criação de relacionamentos entre usuários. Para tornar o projeto realidade, utilizamos a linguagem Kotlin, aplicada no Android studio, com Jackpack compos
+     Nosso Objetivo, é criar um aplicativo voltado para pessoas com deficiência auditiva ou visual, que estão a procura de expandir seus horizontes. Buscamos tornar viagens mais acessíveis e inclusivas para esse público, através de guias especializados e uma comunidade interativa, voltada para a criação de relacionamentos entre usuários. Para tornar o projeto realidade, utilizamos a linguagem Kotlin, aplicada no Android studio, com Jackpack compose.
    </p>
 
 - Acesso ao figma: [Figma VOOAZ](https://www.figma.com/design/pfqkjOupa5jYwPoLVXwLpS/VOOAZ-DEMODAY?node-id=0-1&t=sgmaTzIDFaJZiQ99-1)
@@ -98,7 +98,7 @@ Siga a VOOAZ nas redes sociais para ficar por dentro das últimas novidades e at
 
 <div>
 <img src="https://img.shields.io/badge/Kotlin-%237F52FF.svg?logo=kotlin&logoColor=white" />
-<img src="" />
+
 
 
 ![Trello](https://img.shields.io/badge/Trello-%23026AA7.svg?style=for-the-badge&logo=Trello&logoColor=white)
