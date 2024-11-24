@@ -35,7 +35,7 @@ import com.vooazdomain.Vooaz.R
 import com.vooazdomain.Vooaz.ui.theme.VooazTheme
 
 @Composable
-fun BackgroundColor() {
+fun BackgroundInputScreen() {
     Box(
         modifier = Modifier
             .background(
@@ -44,46 +44,6 @@ fun BackgroundColor() {
             .fillMaxWidth()
             .fillMaxHeight()
     )
-
-
-}
-
-@Composable
-fun InputChoicesButtom(navController: NavController) {
-    Column(
-        modifier = Modifier
-            .fillMaxWidth()
-            .fillMaxHeight(),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
-    ) {
-        Button(
-            onClick = { navController.navigate(route = "RegisterAccountScreen" ) },
-            modifier = Modifier
-                .width(300.dp)
-                .height(90.dp).padding(bottom = 10.dp),
-            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF0E2C8F)),
-            shape = RoundedCornerShape(20.dp),
-        ) {
-            Text("Cadastro", fontSize = 20.sp, fontWeight = FontWeight.Bold)
-        }
-        Button(
-            onClick = { navController.navigate(route = "LoginScreen" ) },
-            modifier = Modifier
-                .width(300.dp)
-                .height(90.dp)
-                .padding(top = 10.dp),
-            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFF4B942)),
-            shape = RoundedCornerShape(20.dp)
-        ) {
-            Text("Login", fontSize = 20.sp, fontWeight = FontWeight.Bold)
-
-        }
-    }
-}
-
-@Composable
-fun IconsVooaz() {
     Box(
         modifier = Modifier
             .fillMaxWidth()
@@ -96,12 +56,53 @@ fun IconsVooaz() {
             modifier = Modifier.size(400.dp),
         )
     }
+
+
 }
+
 @Composable
-fun ButtomText(){
-    Row (modifier = Modifier.fillMaxWidth().fillMaxHeight().padding(bottom = 40.dp),
+fun InputScreen(navController: NavController) {
+    BackgroundInputScreen()
+
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .fillMaxHeight(),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center
+    ) {
+        Button(
+            onClick = { navController.navigate(route = "RegisterAccountScreen") },
+            modifier = Modifier
+                .width(300.dp)
+                .height(90.dp)
+                .padding(bottom = 10.dp),
+            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF0E2C8F)),
+            shape = RoundedCornerShape(20.dp),
+        ) {
+            Text("Cadastro", fontSize = 20.sp, fontWeight = FontWeight.Bold)
+        }
+        Button(
+            onClick = { navController.navigate(route = "LoginScreen") },
+            modifier = Modifier
+                .width(300.dp)
+                .height(90.dp)
+                .padding(top = 10.dp),
+            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFF4B942)),
+            shape = RoundedCornerShape(20.dp)
+        ) {
+            Text("Login", fontSize = 20.sp, fontWeight = FontWeight.Bold)
+
+        }
+    }
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .fillMaxHeight()
+            .padding(bottom = 40.dp),
         verticalAlignment = Alignment.Bottom,
-        horizontalArrangement = Arrangement.Center) {
+        horizontalArrangement = Arrangement.Center
+    ) {
         Row {
             Text("Conheça um pouco mais ", fontWeight = FontWeight.Bold)
 
@@ -109,16 +110,6 @@ fun ButtomText(){
         }
 
 
-    }
-}
-
-@Composable
-fun InputScreen(navController: NavController) {
-    VooazTheme {
-        BackgroundColor()
-        IconsVooaz()
-        InputChoicesButtom(navController)
-        ButtomText()
     }
 }
 

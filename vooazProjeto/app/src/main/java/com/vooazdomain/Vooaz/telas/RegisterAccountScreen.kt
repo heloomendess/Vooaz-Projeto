@@ -73,6 +73,7 @@ fun RegisterAccountContent(navController: NavController){
     var email by remember { mutableStateOf("") }
     var password  by remember { mutableStateOf("") }
     var checked by remember { mutableStateOf(true) }
+    BackgroundColorRegisterAccountScreen()
 Box(){
     Icon(Icons.Filled.Close, contentDescription = "Voltar", modifier = Modifier.size(70.dp).padding(top=25.dp).clickable { navController.popBackStack() })
 }
@@ -215,15 +216,10 @@ Box(){
     }
 }
     }
-@Composable
-fun ResgisterAccount(navController: NavController){
-    BackgroundColorRegisterAccountScreen()
-    RegisterAccountContent(navController)
-}
+
 
 @Preview(showBackground = true, widthDp = 390, heightDp = 800)
 @Composable
 fun ResgisterAccountPreview(){
-    BackgroundColorRegisterAccountScreen()
     RegisterAccountContent(rememberNavController())
 }

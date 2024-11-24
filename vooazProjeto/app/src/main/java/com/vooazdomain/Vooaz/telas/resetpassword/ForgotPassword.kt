@@ -42,11 +42,7 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.vooazdomain.Vooaz.R
 
-@Composable
-fun ForgotPassword(navController: NavController){
-    BackgroundForgotPassword()
-    ContentForgotPassword(navController)
-}
+
 @Composable
 fun BackgroundForgotPassword(){
     Box(modifier = Modifier.background(color = Color(0xFF2C58B0)).fillMaxSize())
@@ -58,11 +54,12 @@ fun BackgroundForgotPassword(){
         Image(painterResource(R.drawable.womanforgotpassword), contentDescription = "Woman forgot password image", modifier = Modifier.height(400.dp).width(300.dp).align(Alignment.TopCenter).padding(top= 70.dp))
     }
 }
-@OptIn(ExperimentalMaterial3Api::class)
+
 @Composable
-fun ContentForgotPassword(navController: NavController){
+fun ForgotPasswordScreen(navController: NavController){
     var email by remember { mutableStateOf("")}
 
+    BackgroundForgotPassword()
     Box(
         modifier = Modifier.fillMaxSize(),
 
@@ -101,7 +98,6 @@ fun ContentForgotPassword(navController: NavController){
 @Preview(showBackground = true, heightDp = 800, widthDp = 360)
 @Composable
 fun ForgotPasswordPreview(){
-    BackgroundForgotPassword()
-    ContentForgotPassword(rememberNavController())
+    ForgotPasswordScreen(rememberNavController())
 
 }

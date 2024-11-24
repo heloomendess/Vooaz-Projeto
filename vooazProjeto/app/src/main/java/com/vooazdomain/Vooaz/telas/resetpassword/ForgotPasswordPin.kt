@@ -47,11 +47,6 @@ import com.vooazdomain.Vooaz.componentes.ComposePinInput
 import com.vooazdomain.Vooaz.componentes.ComposePinInputStyle
 
 @Composable
-fun ForgotPasswordPin(navController: NavController){
-    BackgroundForgotPasswordPin()
-    ContentForgotPasswordPin(navController)
-}
-@Composable
 fun BackgroundForgotPasswordPin(){
     Box(modifier = Modifier.background(color = Color(0xFF2C58B0)).fillMaxSize())
     Box(
@@ -62,11 +57,13 @@ fun BackgroundForgotPasswordPin(){
         Image(painterResource(R.drawable.womanforgotpasswordpin), contentDescription = "Woman forgot password image", modifier = Modifier.height(400.dp).width(300.dp).align(Alignment.TopCenter).padding(top= 70.dp))
     }
 }
-@OptIn(ExperimentalMaterial3Api::class)
+
 @Composable
-fun ContentForgotPasswordPin(navController: NavController){
+fun ForgotPasswordPinScreen(navController: NavController){
     var pin by remember { mutableStateOf("") }
     val context = LocalContext.current
+
+    BackgroundForgotPasswordPin()
     Box(
         modifier = Modifier.fillMaxSize(),
 
@@ -118,7 +115,6 @@ fun ContentForgotPasswordPin(navController: NavController){
 @Preview(showBackground = true, heightDp = 800, widthDp = 360)
 @Composable
 fun ForgotPasswordPinPreview(){
-    BackgroundForgotPasswordPin()
-    ContentForgotPasswordPin(rememberNavController())
+    ForgotPasswordPinScreen(rememberNavController())
 
 }
