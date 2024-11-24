@@ -12,7 +12,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -41,10 +40,10 @@ import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.vooazdomain.Vooaz.bottombar.ConstantsBottomNavItem
-
+import com.vooazdomain.Vooaz.ui.theme.poppinsFontFamily
 
 @Composable
-fun  navegationBar(navController: NavHostController) {
+fun navegationBar(navController: NavHostController) {
 
     var selectedIndex by remember { mutableStateOf(0) }
     var someThemes = MaterialTheme.colorScheme
@@ -76,7 +75,6 @@ fun  navegationBar(navController: NavHostController) {
 
                         ) {
 
-
                             selectedIndex = index
 
                             navController.navigate(bottomNavItem.route) {
@@ -90,19 +88,18 @@ fun  navegationBar(navController: NavHostController) {
                     contentAlignment = Alignment.Center
                 ) {
 
-
-                        if (selectedIndex == index) {
-                            Column(
-                                horizontalAlignment = Alignment.CenterHorizontally,
-                                verticalArrangement = Arrangement.spacedBy(8.dp),
-                                modifier = Modifier.fillMaxHeight().padding(top= 9.dp)
-                            ) {
-                                // Ícone
-                                Image(
-                                    painter = painterResource(id = bottomNavItem.icon),
-                                    contentDescription = bottomNavItem.label,
-                                    modifier = Modifier.size(bottomNavItem.size.dp).shadow(elevation = 15.dp),
-                                )
+                    if (selectedIndex == index) {
+                        Column(
+                            horizontalAlignment = Alignment.CenterHorizontally,
+                            verticalArrangement = Arrangement.spacedBy(8.dp),
+                            modifier = Modifier.fillMaxHeight().padding(top= 9.dp)
+                        ) {
+                            // Ícone
+                            Image(
+                                painter = painterResource(id = bottomNavItem.icon),
+                                contentDescription = bottomNavItem.label,
+                                modifier = Modifier.size(bottomNavItem.size.dp).shadow(elevation = 15.dp),
+                            )
                             Box(
                                 modifier = Modifier
                                     .width(30.dp)
@@ -110,24 +107,25 @@ fun  navegationBar(navController: NavHostController) {
                                     .background(someThemes.onSecondaryContainer)
                                     .padding(top = 7.dp)
                             )
-                            }} else {
-
-                            Column(
-                                horizontalAlignment = Alignment.CenterHorizontally,
-                                verticalArrangement = Arrangement.Center,
-                                modifier = Modifier.fillMaxHeight()
-                            ) {
-                                // Ícone
-                                Image(
-                                    painter = painterResource(id = bottomNavItem.icon),
-                                    contentDescription = bottomNavItem.label,
-                                    modifier = Modifier.size(bottomNavItem.size.dp),
-                                )
+                        }
+                    } else {
+                        Column(
+                            horizontalAlignment = Alignment.CenterHorizontally,
+                            verticalArrangement = Arrangement.Center,
+                            modifier = Modifier.fillMaxHeight()
+                        ) {
+                            // Ícone
+                            Image(
+                                painter = painterResource(id = bottomNavItem.icon),
+                                contentDescription = bottomNavItem.label,
+                                modifier = Modifier.size(bottomNavItem.size.dp),
+                            )
                             Text(
                                 text = bottomNavItem.label,
                                 fontSize = 10.sp,
                                 color = someThemes.onSecondaryContainer,
-                                modifier = Modifier.padding(top = 4.dp)
+                                modifier = Modifier.padding(top = 4.dp),
+                                fontFamily = poppinsFontFamily // Adicionando a fonte Poppins
                             )
                         }
                     }
@@ -136,8 +134,9 @@ fun  navegationBar(navController: NavHostController) {
         }
     }
 }
+
 @Composable
-@Preview( showBackground = true, widthDp = 200, heightDp = 600)
-fun PreviewNavigationBar(){
+@Preview(showBackground = true, widthDp = 200, heightDp = 600)
+fun PreviewNavigationBar() {
     navegationBar(rememberNavController())
 }

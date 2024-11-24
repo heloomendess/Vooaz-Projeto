@@ -35,9 +35,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.vooazdomain.Vooaz.R
-import com.vooazdomain.Vooaz.telas.plan.poppinsFontFamily
-import com.vooazdomain.Vooaz.ui.theme.VooazTheme
-
+import com.vooazdomain.Vooaz.ui.theme.*  // Importando as cores do tema
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
