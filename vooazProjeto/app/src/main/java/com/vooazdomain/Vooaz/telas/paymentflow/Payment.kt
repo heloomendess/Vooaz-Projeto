@@ -1,4 +1,4 @@
-package com.vooazdomain.Vooaz.telas
+package com.vooazdomain.Vooaz.telas.paymentflow
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
@@ -25,6 +25,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -33,6 +34,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.vooazdomain.Vooaz.R
+import com.vooazdomain.Vooaz.telas.plan.poppinsFontFamily
 import com.vooazdomain.Vooaz.ui.theme.VooazTheme
 
 
@@ -48,8 +50,13 @@ fun Pagamento(navController: NavController) {
 
     val selectedPais = remember { mutableStateOf("") }
     val expanded = remember { mutableStateOf(false) }
-    val paises = listOf("Brasil", "United States", "Portugal", "日本", "Россия")
-
+    val paises = listOf(
+        stringResource(id = R.string.brasil),
+        stringResource(id = R.string.united_states),
+        stringResource(id = R.string.portugal),
+        stringResource(id = R.string.japan),
+        stringResource(id = R.string.russia)
+    )
     Scaffold(
         modifier = Modifier.fillMaxSize(),
         containerColor = Color(0xFF0E2C8F),
@@ -61,7 +68,7 @@ fun Pagamento(navController: NavController) {
                     IconButton(onClick = { }) {
                         Image(
                             painter = painterResource(id = R.drawable.arrowback),
-                            contentDescription = "Voltar",
+                            contentDescription = stringResource(id = R.string.voltar),
                             modifier = Modifier.size(50.dp)
                         )
                     }
@@ -70,7 +77,7 @@ fun Pagamento(navController: NavController) {
                     IconButton(onClick = { }) {
                         Image(
                             painter = painterResource(id = R.drawable.close),
-                            contentDescription = "Fechar",
+                            contentDescription = stringResource(id = R.string.fechar),
                             modifier = Modifier.size(50.dp)
                         )
                     }
@@ -85,7 +92,7 @@ fun Pagamento(navController: NavController) {
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Text(
-                    text = "Tela de",
+                    text = stringResource(id = R.string.tela_pagamento),
                     fontFamily = poppinsFontFamily,
                     fontWeight = FontWeight.Bold,
                     fontSize = 40.sp,
@@ -94,7 +101,7 @@ fun Pagamento(navController: NavController) {
                     textAlign = TextAlign.Center
                 )
                 Text(
-                    text = "Pagamento",
+                    text = stringResource(id = R.string.pagamento),
                     fontFamily = poppinsFontFamily,
                     fontWeight = FontWeight.Bold,
                     fontSize = 40.sp,
@@ -109,7 +116,7 @@ fun Pagamento(navController: NavController) {
                     horizontalAlignment = Alignment.Start
                 ) {
                     Text(
-                        text = "Nome Completo do Titular",
+                        text = stringResource(id = R.string.nome_completo_titular),
                         fontFamily = poppinsFontFamily,
                         fontWeight = FontWeight.Bold,
                         fontSize = 18.sp,
@@ -119,11 +126,11 @@ fun Pagamento(navController: NavController) {
                     OutlinedTextField(
                         value = nome.value,
                         onValueChange = { nome.value = it },
-                        label = { Text("Nome Completo do Titular") },
+                        label = { Text(stringResource(id = R.string.nome_completo_titular)) },
                         leadingIcon = {
                             Image(
                                 painter = painterResource(id = R.drawable.user_icon),
-                                contentDescription = "Imagem de Usuário",
+                                contentDescription = stringResource(id = R.string.imagem_usuario),
                                 modifier = Modifier.size(24.dp),
                             )
                         },
@@ -135,8 +142,9 @@ fun Pagamento(navController: NavController) {
                         ),
                         modifier = Modifier.fillMaxWidth()
                     )
+
                     Text(
-                        text = "Número do Cartão",
+                        text = stringResource(id = R.string.numero_cartao),
                         fontFamily = poppinsFontFamily,
                         fontWeight = FontWeight.Bold,
                         fontSize = 18.sp,
@@ -146,11 +154,11 @@ fun Pagamento(navController: NavController) {
                     OutlinedTextField(
                         value = numeroCartao.value,
                         onValueChange = { numeroCartao.value = it },
-                        label = { Text("Número do Cartão") },
+                        label = { Text(stringResource(id = R.string.numero_cartao)) },
                         leadingIcon = {
                             Image(
                                 painter = painterResource(id = R.drawable.icon_cartao),
-                                contentDescription = "Imagem de Cartão",
+                                contentDescription = stringResource(id = R.string.imagem_cartao),
                                 modifier = Modifier.size(24.dp),
                             )
                         },
@@ -173,16 +181,14 @@ fun Pagamento(navController: NavController) {
                                 .padding(horizontal = 10.dp),
                             horizontalAlignment = Alignment.Start
                         ) {
-
                             Text(
-                                text = "Data de Expedição",
+                                text = stringResource(id = R.string.data_expedicao),
                                 fontFamily = poppinsFontFamily,
                                 fontWeight = FontWeight.Bold,
                                 fontSize = 15.sp,
                                 color = Color(0xFFF4B942),
                                 modifier = Modifier.padding(top = 15.dp, bottom = 0.dp)
                             )
-
                             OutlinedTextField(
                                 value = dataExpedicao.value,
                                 onValueChange = { dataExpedicao.value = it },
@@ -190,7 +196,7 @@ fun Pagamento(navController: NavController) {
                                 leadingIcon = {
                                     Image(
                                         painter = painterResource(id = R.drawable.calendario),
-                                        contentDescription = "Expira",
+                                        contentDescription = stringResource(id = R.string.expires),
                                         modifier = Modifier.size(24.dp),
                                     )
                                 },
@@ -204,7 +210,6 @@ fun Pagamento(navController: NavController) {
                                     .width(150.dp)
                                     .padding(top = 0.dp)
                             )
-
                         }
 
                         Column(
@@ -212,16 +217,14 @@ fun Pagamento(navController: NavController) {
                                 .padding(horizontal = 5.dp),
                             horizontalAlignment = Alignment.End
                         ) {
-
                             Text(
-                                text = "Codigo de Segurança",
+                                text = stringResource(id = R.string.codigo_seguranca),
                                 fontFamily = poppinsFontFamily,
                                 fontWeight = FontWeight.Bold,
                                 fontSize = 14.sp,
                                 color = Color(0xFFF4B942),
                                 modifier = Modifier.padding(top = 15.dp, bottom = 0.dp)
                             )
-
                             OutlinedTextField(
                                 value = cvc.value,
                                 onValueChange = { cvc.value = it },
@@ -229,7 +232,7 @@ fun Pagamento(navController: NavController) {
                                 leadingIcon = {
                                     Image(
                                         painter = painterResource(id = R.drawable.cvc),
-                                        contentDescription = "CVC",
+                                        contentDescription = stringResource(id = R.string.cvc),
                                         modifier = Modifier.size(24.dp),
                                     )
                                 },
@@ -243,12 +246,11 @@ fun Pagamento(navController: NavController) {
                                     .width(150.dp)
                                     .padding(top = 0.dp)
                             )
-
                         }
                     }
 
                     Text(
-                        text = "CPF/CNPJ",
+                        text = stringResource(id = R.string.cpf_cnpj),
                         fontFamily = poppinsFontFamily,
                         fontWeight = FontWeight.Bold,
                         fontSize = 18.sp,
@@ -268,7 +270,7 @@ fun Pagamento(navController: NavController) {
                     )
 
                     Text(
-                        text = "Endereço de Email",
+                        text = stringResource(id = R.string.endereco_email),
                         fontFamily = poppinsFontFamily,
                         fontWeight = FontWeight.Bold,
                         fontSize = 18.sp,
@@ -278,11 +280,11 @@ fun Pagamento(navController: NavController) {
                     OutlinedTextField(
                         value = email.value,
                         onValueChange = { email.value = it },
-                        label = { Text("Endereço de Email") },
+                        label = { Text(stringResource(id = R.string.endereco_email)) },
                         leadingIcon = {
                             Image(
                                 painter = painterResource(id = R.drawable.email),
-                                contentDescription = "Email",
+                                contentDescription = stringResource(id = R.string.email),
                                 modifier = Modifier.size(24.dp),
                             )
                         },
@@ -298,11 +300,11 @@ fun Pagamento(navController: NavController) {
                     OutlinedTextField(
                         value = selectedPais.value,
                         onValueChange = {},
-                        label = { Text("Selecione um País") },
+                        label = { Text(stringResource(id = R.string.selecionar_pais)) },
                         leadingIcon = {
                             Image(
                                 painter = painterResource(id = R.drawable.mundo),
-                                contentDescription = "Imagem Fixa",
+                                contentDescription = stringResource(id = R.string.imagem_fixa),
                                 modifier = Modifier.size(24.dp)
                             )
                         },
@@ -344,6 +346,7 @@ fun Pagamento(navController: NavController) {
         }
     )
 }
+
 
 @Preview(showBackground = true, widthDp = 390, heightDp = 800 )
 @Composable

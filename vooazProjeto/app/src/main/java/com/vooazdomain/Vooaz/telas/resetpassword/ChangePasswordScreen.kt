@@ -34,6 +34,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 
 import androidx.compose.ui.tooling.preview.Preview
@@ -61,7 +62,7 @@ fun BackgroundColorChangePassword() {
     ) {
         Image(
             painterResource(R.drawable.logoaz),
-            contentDescription = "Logo",
+            contentDescription = stringResource(R.string.logo),
             modifier = Modifier.size(350.dp),
         )
     }
@@ -84,7 +85,7 @@ fun ChangePasswordScreen(navController: NavController) {
         ) {
         Icon(
             Icons.Filled.Close,
-            contentDescription = "Voltar",
+            contentDescription = stringResource(R.string.voltar),
             modifier = Modifier
                 .size(50.dp)
                 .padding(top = 20.dp)
@@ -100,7 +101,7 @@ fun ChangePasswordScreen(navController: NavController) {
     ) {
 
         Text(
-            "Crie uma nova senha",
+            stringResource(R.string.crie_uma_nova_senha),
             fontSize = 20.sp,
             fontWeight = FontWeight.Bold,
             color = Color(0xFFF4B942),
@@ -123,7 +124,7 @@ fun ChangePasswordScreen(navController: NavController) {
                     modifier = Modifier.size(30.dp)
                 )
             },
-            label = { Text("Nova Senha") })
+            label = { Text(stringResource(R.string.nova_senha)) })
 
         TextField(
             value = confirmPassword,
@@ -141,7 +142,7 @@ fun ChangePasswordScreen(navController: NavController) {
                     modifier = Modifier.size(30.dp)
                 )
             },
-            label = { Text("Confirmar Senha") })
+            label = { Text(stringResource(R.string.confirmar_senha)) })
 
         Button(
             onClick = {
@@ -155,7 +156,7 @@ fun ChangePasswordScreen(navController: NavController) {
                 .height(50.dp),
             colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFF4B942)),
         ) {
-            Text("Resetar Senha", fontWeight = FontWeight.Bold, color = Color.White)
+            Text(stringResource(R.string.resetar_senha), fontWeight = FontWeight.Bold, color = Color.White)
         }
     }
 }

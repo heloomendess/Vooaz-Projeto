@@ -1,4 +1,4 @@
-package com.vooazdomain.Vooaz.navigation
+package com.vooazdomain.Vooaz.navigationflow
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Scaffold
@@ -10,10 +10,10 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.vooazdomain.Vooaz.telas.InputScreen
-import com.vooazdomain.Vooaz.telas.LoginScreen
-import com.vooazdomain.Vooaz.telas.PlanSuggestionScreen
-import com.vooazdomain.Vooaz.telas.RegisterAccountContent
+import com.vooazdomain.Vooaz.telas.inputflow.InputScreen
+import com.vooazdomain.Vooaz.telas.inputflow.LoginScreen
+import com.vooazdomain.Vooaz.telas.plan.PlanSuggestionScreen
+import com.vooazdomain.Vooaz.telas.inputflow.RegisterAccountContent
 import com.vooazdomain.Vooaz.telas.resetpassword.ChangePasswordScreen
 import com.vooazdomain.Vooaz.telas.resetpassword.ForgotPasswordPinScreen
 import com.vooazdomain.Vooaz.telas.resetpassword.ForgotPasswordScreen
@@ -48,7 +48,7 @@ fun NavigationFlowSettings() {
                     ChangePasswordScreen(navController)
                 }
                 composable("LoginScreen") {
-                    LoginScreen(navController)
+                   LoginScreen(navController)
                 }
                 composable("RegisterAccountScreen") {
                     RegisterAccountContent(navController)

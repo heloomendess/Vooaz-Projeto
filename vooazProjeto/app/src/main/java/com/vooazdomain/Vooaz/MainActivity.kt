@@ -6,7 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 
-import com.vooazdomain.Vooaz.navigation.NavigationFlowSettings
+import com.vooazdomain.Vooaz.navigationflow.NavigationFlowSettings
 import com.vooazdomain.Vooaz.splashpage.addSplashPage
 import com.vooazdomain.Vooaz.ui.theme.VooazTheme
 

@@ -44,10 +44,10 @@ import com.vooazdomain.Vooaz.bottombar.ConstantsBottomNavItem
 
 @Composable
 fun  navegationBar(navController: NavHostController) {
-    // Estado para controlar o índice selecionado
+
     var selectedIndex by remember { mutableStateOf(0) }
 
-    // Box para a barra de navegação, com fundo personalizado
+
     Box(
         modifier = Modifier
             .fillMaxWidth()
@@ -57,17 +57,17 @@ fun  navegationBar(navController: NavHostController) {
                 shape = RoundedCornerShape(topStart = 55.dp, topEnd = 55.dp)
             ).padding(10.dp)
     ) {
-        // Usando Row para distribuir os ícones igualmente
+
         Row (
             modifier = Modifier
-                .align(Alignment.Center) // Alinha o conteúdo na horizontal
-                .fillMaxSize() // Preenche todo o espaço disponível
-                .padding(horizontal = 1.dp), // Espaçamento entre os ícones
+                .align(Alignment.Center)
+                .fillMaxSize()
+                .padding(horizontal = 1.dp),
             horizontalArrangement = Arrangement.SpaceEvenly
 
         ) {
             ConstantsBottomNavItem.BottomNavItems.forEachIndexed { index, bottomNavItem ->
-                // Ícone e rótulo personalizados para cada item
+
                 Box(
                     modifier = Modifier
                         .clickable(
@@ -90,7 +90,7 @@ fun  navegationBar(navController: NavHostController) {
                     contentAlignment = Alignment.Center
                 ) {
 
-                        // Rótulo
+
                         if (selectedIndex == index) {
                             Column(
                                 horizontalAlignment = Alignment.CenterHorizontally,
@@ -105,10 +105,10 @@ fun  navegationBar(navController: NavHostController) {
                                 )
                             Box(
                                 modifier = Modifier
-                                    .width(30.dp)  // Ajuste a largura do traço
-                                    .height(4.dp)         // Altura do traço
-                                    .background(Color.White) // Cor do traço
-                                    .padding(top = 7.dp)   // Espaçamento entre o rótulo e o traço
+                                    .width(30.dp)
+                                    .height(4.dp)
+                                    .background(Color.White)
+                                    .padding(top = 7.dp)
                             )
                             }} else {
 

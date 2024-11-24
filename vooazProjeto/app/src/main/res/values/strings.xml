@@ -1,3 +1,108 @@
 <resources>
+   <!--  plans -->
     <string name="app_name">Vooaz</string>
+    <string name="continuar_gratis">Continuar Grátis</string>
+    <string name="voltar">Voltar</string>
+    <string name="obter_plano">Obter Plano</string>
+    <string name="explore_nossos_planos">Explore Nossos
+Planos!</string>
+
+
+    <!--  ChangePasswordScreen -->
+
+    <string name="logo">Logo</string>
+    <string name="crie_uma_nova_senha">Crie uma nova senha</string>
+    <string name="nova_senha">Nova Senha</string>
+    <string name="confirmar_senha">Confirmar Senha</string>
+    <string name="resetar_senha">Resetar Senha</string>
+
+
+    <!--  ForgotPassword -->
+
+    <string name="woman_forgot_icon">Ícone de mulher esquecimento de senha</string>
+    <string name="esqueceu_a_senha">Esqueceu a senha?</string>
+    <string name="email_instructions">• Entre com o seu email para verificar sua identidade</string>
+    <string name="password_reminder">• Sempre que possível anote a senha a qual você digitou</string>
+    <string name="enviar_email">Enviar Email</string>
+
+    <!--  ForgotPasswordScreenPin -->
+
+
+    <string name="woman_forgot_pin_icon">Ícone de mulher esquecimento de senha (PIN)</string>
+    <string name="verificar_pin">Verificar Pin?</string>
+    <string name="pin_instructions">• Entre com o código que foi enviado ao seu email</string>
+    <string name="verificar">Verificar</string>
+
+
+    <!--  Payment -->
+    <string name="brasil">Brasil</string>
+    <string name="united_states">United States</string>
+    <string name="portugal">Portugal</string>
+    <string name="japan">日本</string>
+    <string name="russia">Россия</string>
+    <string name="fechar">Fechar</string>
+    <string name="tela_pagamento">Tela de</string>
+    <string name="pagamento">Pagamento</string>
+    <string name="nome_completo_titular">Nome Completo do Titular</string>
+    <string name="numero_cartao">Número do Cartão</string>
+    <string name="data_expedicao">Data de Expedição</string>
+    <string name="codigo_seguranca">Código de Segurança</string>
+    <string name="cpf_cnpj">CPF/CNPJ</string>
+    <string name="endereco_email">Endereço de Email</string>
+    <string name="selecionar_pais">Selecione um País</string>
+    <string name="imagem_usuario">Imagem de Usuário</string>
+    <string name="imagem_cartao">Imagem de Cartão</string>
+    <string name="expires">Expira</string>
+    <string name="cvc">CVC</string>
+    <string name="email">Email</string>
+    <string name="imagem_fixa">Imagem Fixa</string>
+
+
+    <!--  SucessPayment -->
+    <string name="pagamento_feito_desc">Pagamento Concluído</string>
+    <string name="entrar">Entrar</string>
+
+    <!--  LoginScreen -->
+    <string name="senha">Senha</string>
+    <string name="esqueci_minha_senha">Esqueci minha senha</string>
+    <string name="ou_faca_login">Ou faça login:</string>
+    <string name="google">Google logo</string>
+    <string name="instagram">Instagram logo</string>
+    <string name="facebook">Facebook logo</string>
+
+    <!--  PlansScreenSuggestion -->
+
+    <string name="conhecer_premium">Conhecer Premium</string>
+    <string name="deixar_para_depois">Deixar para depois</string>
+    <string name="background_airport_desc">Airport background</string>
+
+    <!--  InputScreen -->
+    <string name="logo_description">Logo</string>
+    <string name="register">Cadastro</string>
+    <string name="login">Login</string>
+    <string name="know_more">Conheça um pouco mais </string>
+    <string name="about_us">sobre nós.</string>
+
+    <!--  RegisterAccountScreen -->
+
+    <string name="close_button">Voltar</string>
+    <string name="create_account_with">Criar conta usando:</string>
+    <string name="google_logo">Google logo</string>
+    <string name="instagram_logo">Instagram logo</string>
+    <string name="facebook_logo">Facebook logo</string>
+    <string name="or_else">-- ou então --</string>
+    <string name="name">Nome</string>
+    <string name="password">Senha</string>
+    <string name="agree_terms">Ao criar uma conta, você concorda com nossos </string>
+    <string name="terms_of_use">Termos de Uso</string>
+    <string name="and_privacy_policy">e nossa Política de Privacidade</string>
+    <string name="enter">Entrar</string>
+
+    <!--  ConstantsBottomNavItem -->
+
+    <string name="chat">Chat</string>
+    <string name="destination">Destination</string>
+    <string name="airplane">Airplane</string>
+    <string name="tour_guides">Tour guides</string>
+    <string name="settings">Settings</string>
 </resources>
