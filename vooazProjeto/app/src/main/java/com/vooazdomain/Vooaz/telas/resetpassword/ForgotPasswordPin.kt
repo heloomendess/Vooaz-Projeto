@@ -20,7 +20,9 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.ColorScheme
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -44,8 +46,8 @@ import com.vooazdomain.Vooaz.componentes.ComposePinInput
 import com.vooazdomain.Vooaz.componentes.ComposePinInputStyle
 
 @Composable
-fun BackgroundForgotPasswordPin(){
-    Box(modifier = Modifier.background(color = Color(0xFF2C58B0)).fillMaxSize())
+fun BackgroundForgotPasswordPin(someThemes: ColorScheme){
+    Box(modifier = Modifier.background(color =someThemes.onBackground).fillMaxSize())
     Box(
         modifier = Modifier.fillMaxSize(),
     ){
@@ -57,8 +59,8 @@ fun BackgroundForgotPasswordPin(){
 fun ForgotPasswordPinScreen(navController: NavController){
     var pin by remember { mutableStateOf("") }
     val context = LocalContext.current
-
-    BackgroundForgotPasswordPin()
+    var someThemes = MaterialTheme.colorScheme
+    BackgroundForgotPasswordPin(someThemes)
     Box(
         modifier = Modifier.fillMaxSize(),
     ){
@@ -70,14 +72,14 @@ fun ForgotPasswordPinScreen(navController: NavController){
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
     ) {
-        Text(stringResource(R.string.verificar_pin), fontSize = 30.sp, fontWeight = FontWeight.Bold, color= Color(color = 0xFFF4B942))
-        Text(stringResource(R.string.pin_instructions), fontSize= 10.sp, modifier = Modifier.padding(top = 10.dp))
+        Text(stringResource(R.string.verificar_pin), fontSize = 30.sp, fontWeight = FontWeight.Bold, color= someThemes.onTertiary)
+        Text(stringResource(R.string.pin_instructions), fontSize= 10.sp, modifier = Modifier.padding(top = 10.dp), color=someThemes.onSecondary)
         Row(modifier=Modifier.padding(top = 20.dp)) {
             ComposePinInput(
                 value = pin,
                 mask = '*',
-                cellBorderColor = Color.Black,
-                focusedCellBorderColor = Color(0xFFF4B942),
+                cellBorderColor =someThemes.onSecondary,
+                focusedCellBorderColor = someThemes.onTertiary,
                 onValueChange = {
                     pin = it
                 },
@@ -94,7 +96,7 @@ fun ForgotPasswordPinScreen(navController: NavController){
         },
             shape = RoundedCornerShape(20.dp),
             modifier = Modifier.padding(top = 30.dp).width(200.dp).height(50.dp),
-            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFF4B942)),
+            colors = ButtonDefaults.buttonColors(containerColor = someThemes.onTertiary),
         ) {
             Text(stringResource(R.string.verificar), fontWeight = FontWeight.Bold)
         }

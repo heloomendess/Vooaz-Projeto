@@ -16,6 +16,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Text
@@ -46,14 +47,13 @@ import com.vooazdomain.Vooaz.bottombar.ConstantsBottomNavItem
 fun  navegationBar(navController: NavHostController) {
 
     var selectedIndex by remember { mutableStateOf(0) }
-
-
+    var someThemes = MaterialTheme.colorScheme
     Box(
         modifier = Modifier
             .fillMaxWidth()
             .height(100.dp)
             .background(
-                color = Color(0xFF4059AD),
+                color = someThemes.onBackground,
                 shape = RoundedCornerShape(topStart = 55.dp, topEnd = 55.dp)
             ).padding(10.dp)
     ) {
@@ -107,7 +107,7 @@ fun  navegationBar(navController: NavHostController) {
                                 modifier = Modifier
                                     .width(30.dp)
                                     .height(4.dp)
-                                    .background(Color.White)
+                                    .background(someThemes.onSecondaryContainer)
                                     .padding(top = 7.dp)
                             )
                             }} else {
@@ -126,7 +126,7 @@ fun  navegationBar(navController: NavHostController) {
                             Text(
                                 text = bottomNavItem.label,
                                 fontSize = 10.sp,
-                                color = Color.White,
+                                color = someThemes.onSecondaryContainer,
                                 modifier = Modifier.padding(top = 4.dp)
                             )
                         }

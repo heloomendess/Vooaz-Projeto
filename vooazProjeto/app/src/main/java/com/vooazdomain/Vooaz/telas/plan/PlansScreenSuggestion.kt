@@ -6,6 +6,8 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.ColorScheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -25,7 +27,8 @@ import androidx.compose.ui.res.stringResource
 
 @Composable
 fun PlanSuggestionScreen(navController: NavHostController) {
-    BackgroundAirport()
+    var someThemes = MaterialTheme.colorScheme
+    BackgroundAirport(someThemes)
 
     Box(
         modifier = Modifier.padding(top = 400.dp)
@@ -39,7 +42,7 @@ fun PlanSuggestionScreen(navController: NavHostController) {
             Text(
                 text = stringResource(id = R.string.explore_nossos_planos),
                 fontSize = 36.sp,
-                color = Color(0xFFF4B942),
+                color = someThemes.onTertiary,
                 fontWeight = FontWeight.Bold,
                 maxLines = 2,
                 lineHeight = 40.sp
@@ -50,20 +53,20 @@ fun PlanSuggestionScreen(navController: NavHostController) {
                 modifier = Modifier
                     .padding(top = 20.dp)
                     .size(width = 250.dp, height = 50.dp),
-                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF97D8C4))
+                colors = ButtonDefaults.buttonColors(containerColor = someThemes.secondary)
             ) {
                 Text(
                     stringResource(id = R.string.conhecer_premium),
                     fontSize = 20.sp,
                     fontWeight = FontWeight.Bold,
-                    color = Color.Black
+                    color = someThemes.onSecondary
                 )
             }
 
             Text(
                 text = stringResource(id = R.string.deixar_para_depois),
                 textDecoration = TextDecoration.Underline,
-                color = Color.White,
+                color = someThemes.onSecondaryContainer,
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier
                     .padding(top = 8.dp)
@@ -74,8 +77,8 @@ fun PlanSuggestionScreen(navController: NavHostController) {
 }
 
 @Composable
-fun BackgroundAirport() {
-    Box(Modifier.fillMaxSize().background(Color(0xFF4059AD)))
+fun BackgroundAirport(someThemes: ColorScheme) {
+    Box(Modifier.fillMaxSize().background(someThemes.onBackground))
     Box(modifier = Modifier.fillMaxSize()) {
         Image(
             painter = painterResource(R.drawable.background_airport),

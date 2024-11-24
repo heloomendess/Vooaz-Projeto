@@ -16,6 +16,7 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
@@ -48,17 +49,18 @@ val poppinsFontFamily = FontFamily(
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Planos(navController: NavController) {
+fun Plans(navController: NavController) {
     val refreshing = remember { mutableStateOf(false) }
     val coroutineScope = rememberCoroutineScope()
-
+    var someThemes = MaterialTheme.colorScheme
+    
     Scaffold(
         modifier = Modifier.fillMaxSize(),
-        containerColor = Color(0xFF0E2C8F),
+        containerColor = someThemes.background,
         topBar = {
             TopAppBar(
                 title = { Text(text = "") },
-                colors = TopAppBarDefaults.smallTopAppBarColors(containerColor = Color(0xFF0E2C8F)),
+                colors = TopAppBarDefaults.smallTopAppBarColors(containerColor = someThemes.background),
                 navigationIcon = {
                     IconButton(onClick = { }) {
                         Image(
@@ -83,7 +85,7 @@ fun Planos(navController: NavController) {
                         fontFamily = poppinsFontFamily,
                         fontWeight = FontWeight.Bold,
                         fontSize = 30.sp,
-                        color = Color(0xFFF4B942),
+                        color = someThemes.onTertiary,
                         modifier = Modifier.padding(top = 16.dp),
                         textAlign = TextAlign.Center
                     )
@@ -96,7 +98,7 @@ fun Planos(navController: NavController) {
                         modifier = Modifier
                             .padding(16.dp)
                             .background(Color(0xFF97D8C4), RoundedCornerShape(30.dp))
-                            .border(BorderStroke(2.dp, Color.White), RoundedCornerShape(30.dp))
+                            .border(BorderStroke(2.dp, someThemes.onSecondaryContainer), RoundedCornerShape(30.dp))
                             .padding(16.dp)
                     ) {
                         Column(
@@ -114,11 +116,11 @@ fun Planos(navController: NavController) {
                             Button(
                                 onClick = {},
                                 colors = ButtonDefaults.buttonColors(
-                                    containerColor = Color(0xFFF4B942),
-                                    contentColor = Color.Black
+                                    containerColor = someThemes.onTertiary,
+                                    contentColor = someThemes.onSecondary
                                 ),
                                 shape = RoundedCornerShape(30.dp),
-                                border = BorderStroke(1.dp, Color.Black),
+                                border = BorderStroke(1.dp, someThemes.onSecondary),
                                 modifier = Modifier
                                     .padding(top = 14.dp, bottom = 10.dp)
 
@@ -141,7 +143,7 @@ fun Planos(navController: NavController) {
                         modifier = Modifier
                             .padding(16.dp)
                             .background(Color(0xFF6B9AC4), RoundedCornerShape(30.dp))
-                            .border(BorderStroke(2.dp, Color.White), RoundedCornerShape(30.dp))
+                            .border(BorderStroke(2.dp, someThemes.onSecondaryContainer), RoundedCornerShape(30.dp))
                             .padding(16.dp)
                     ) {
                         Column(
@@ -160,10 +162,10 @@ fun Planos(navController: NavController) {
                                 onClick = {},
                                 colors = ButtonDefaults.buttonColors(
                                     containerColor = Color(0xFF97D8C4),
-                                    contentColor = Color.Black
+                                    contentColor = someThemes.onSecondary
                                 ),
                                 shape = RoundedCornerShape(30.dp),
-                                border = BorderStroke(1.dp, Color.Black),
+                                border = BorderStroke(1.dp, someThemes.onSecondary),
                                 modifier = Modifier
                                     .padding(top = 14.dp, bottom = 10.dp)
 
@@ -184,8 +186,8 @@ fun Planos(navController: NavController) {
                     Box(
                         modifier = Modifier
                             .padding(16.dp)
-                            .background(Color(0xFFF4B942), RoundedCornerShape(30.dp))
-                            .border(BorderStroke(2.dp, Color.White), RoundedCornerShape(30.dp))
+                            .background(someThemes.onTertiary, RoundedCornerShape(30.dp))
+                            .border(BorderStroke(2.dp, someThemes.onSecondaryContainer), RoundedCornerShape(30.dp))
                             .padding(16.dp)
                     ) {
                         Column(
@@ -204,10 +206,10 @@ fun Planos(navController: NavController) {
                                 onClick = {},
                                 colors = ButtonDefaults.buttonColors(
                                     containerColor = Color(0xFF6B9AC4),
-                                    contentColor = Color.Black
+                                    contentColor = someThemes.onSecondary
                                 ),
                                 shape = RoundedCornerShape(30.dp),
-                                border = BorderStroke(1.dp, Color.Black),
+                                border = BorderStroke(1.dp, someThemes.onSecondary),
                                 modifier = Modifier
                                     .padding(top = 14.dp, bottom = 10.dp)
 
@@ -230,8 +232,8 @@ fun Planos(navController: NavController) {
 
 @Preview(showBackground = true, widthDp = 390, heightDp = 800 )
 @Composable
-fun PlanosPreview() {
+fun PlansPreview() {
     VooazTheme {
-        Planos(rememberNavController())
+        Plans(rememberNavController())
     }
 }
