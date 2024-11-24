@@ -44,7 +44,7 @@ import androidx.compose.material3.MaterialTheme
 import com.vooazdomain.Vooaz.ui.theme.*  // Importando as cores do tema
 
 @Composable
-fun BackgroundColorRegisterAccountScreen(someThemes:ColorScheme) {
+fun BackgroundColorRegisterAccountScreen(someThemes: ColorScheme) {
     Box(
         modifier = Modifier
             .background(color = someThemes.onBackground)  // Usando a cor do tema
@@ -63,7 +63,11 @@ fun RegisterAccountContent(navController: NavController) {
     BackgroundColorRegisterAccountScreen(someThemes)
 
     Box() {
-        Icon(Icons.Filled.Close, contentDescription = stringResource(id = R.string.close_button), modifier = Modifier.size(70.dp).padding(top = 25.dp).clickable { navController.popBackStack() })
+        Icon(
+            Icons.Filled.Close,
+            contentDescription = stringResource(id = R.string.close_button),
+            modifier = Modifier.size(70.dp).padding(top = 25.dp).clickable { navController.popBackStack() }
+        )
     }
 
     Column(
@@ -79,7 +83,8 @@ fun RegisterAccountContent(navController: NavController) {
                 text = stringResource(id = R.string.create_account_with),
                 fontSize = 18.sp,
                 color = someThemes.onTertiary,  // Usando a cor amarela do tema
-                fontWeight = FontWeight.Bold
+                fontWeight = FontWeight.Bold,
+                fontFamily = poppinsFontFamily  // Aplicando a fonte Poppins
             )
         }
         Row(
@@ -110,7 +115,8 @@ fun RegisterAccountContent(navController: NavController) {
                 text = stringResource(id = R.string.or_else),
                 fontSize = 18.sp,
                 color = someThemes.onTertiary,  // Usando a cor amarela do tema
-                fontWeight = FontWeight.Bold
+                fontWeight = FontWeight.Bold,
+                fontFamily = poppinsFontFamily  // Aplicando a fonte Poppins
             )
         }
 
@@ -118,7 +124,8 @@ fun RegisterAccountContent(navController: NavController) {
             Text(
                 text = stringResource(id = R.string.name),
                 color = someThemes.onTertiary,  // Usando a cor amarela do tema
-                modifier = Modifier.align(Alignment.Start).padding(start = 40.dp, top = 20.dp, bottom = 2.dp)
+                modifier = Modifier.align(Alignment.Start).padding(start = 40.dp, top = 20.dp, bottom = 2.dp),
+                fontFamily = poppinsFontFamily  // Aplicando a fonte Poppins
             )
 
             TextField(
@@ -139,7 +146,8 @@ fun RegisterAccountContent(navController: NavController) {
             Text(
                 text = stringResource(id = R.string.email),
                 color = someThemes.onTertiary,  // Usando a cor amarela do tema
-                modifier = Modifier.align(Alignment.Start).padding(start = 40.dp, top = 20.dp, bottom = 2.dp)
+                modifier = Modifier.align(Alignment.Start).padding(start = 40.dp, top = 20.dp, bottom = 2.dp),
+                fontFamily = poppinsFontFamily  // Aplicando a fonte Poppins
             )
 
             TextField(
@@ -160,7 +168,8 @@ fun RegisterAccountContent(navController: NavController) {
             Text(
                 text = stringResource(id = R.string.password),
                 color = someThemes.onTertiary,  // Usando a cor amarela do tema
-                modifier = Modifier.align(Alignment.Start).padding(start = 40.dp, top = 20.dp, bottom = 2.dp)
+                modifier = Modifier.align(Alignment.Start).padding(start = 40.dp, top = 20.dp, bottom = 2.dp),
+                fontFamily = poppinsFontFamily  // Aplicando a fonte Poppins
             )
 
             TextField(
@@ -215,7 +224,8 @@ fun RegisterAccountContent(navController: NavController) {
                             withStyle(SpanStyle(color = someThemes.onSecondaryContainer)) {
                                 append(stringResource(id = R.string.and_privacy_policy))
                             }
-                        }
+                        },
+                        fontFamily = poppinsFontFamily  // Aplicando a fonte Poppins
                     )
                 }
 
@@ -228,7 +238,8 @@ fun RegisterAccountContent(navController: NavController) {
                     Text(
                         text = stringResource(id = R.string.enter),
                         fontWeight = FontWeight.Bold,
-                        fontSize = 20.sp
+                        fontSize = 20.sp,
+                        fontFamily = poppinsFontFamily
                     )
                 }
             }

@@ -24,10 +24,13 @@ import androidx.navigation.compose.rememberNavController
 import com.vooazdomain.Vooaz.R
 import com.vooazdomain.Vooaz.ui.theme.VooazTheme
 import androidx.compose.ui.res.stringResource
+import com.vooazdomain.Vooaz.ui.theme.poppinsFontFamily
+
+
 
 @Composable
 fun PlanSuggestionScreen(navController: NavHostController) {
-    var someThemes = MaterialTheme.colorScheme
+    val someThemes = MaterialTheme.colorScheme
     BackgroundAirport(someThemes)
 
     Box(
@@ -45,7 +48,8 @@ fun PlanSuggestionScreen(navController: NavHostController) {
                 color = someThemes.onTertiary,
                 fontWeight = FontWeight.Bold,
                 maxLines = 2,
-                lineHeight = 40.sp
+                lineHeight = 40.sp,
+                fontFamily = poppinsFontFamily // Adicionando a fonte Poppins
             )
 
             Button(
@@ -59,7 +63,8 @@ fun PlanSuggestionScreen(navController: NavHostController) {
                     stringResource(id = R.string.conhecer_premium),
                     fontSize = 20.sp,
                     fontWeight = FontWeight.Bold,
-                    color = someThemes.onSecondary
+                    color = someThemes.onSecondary,
+                    fontFamily = poppinsFontFamily // Adicionando a fonte Poppins
                 )
             }
 
@@ -70,7 +75,8 @@ fun PlanSuggestionScreen(navController: NavHostController) {
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier
                     .padding(top = 8.dp)
-                    .clickable { navController.navigate("InputScreen") }
+                    .clickable { navController.navigate("InputScreen") },
+                fontFamily = poppinsFontFamily // Adicionando a fonte Poppins
             )
         }
     }

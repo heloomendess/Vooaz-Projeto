@@ -13,8 +13,8 @@ import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ColorScheme
-import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
@@ -38,6 +38,7 @@ import com.vooazdomain.Vooaz.R
 import com.vooazdomain.Vooaz.ui.theme.VooazTheme
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
+import com.vooazdomain.Vooaz.ui.theme.poppinsFontFamily
 
 @Composable
 fun BackgroundLoginScreen(someTheme: ColorScheme) {
@@ -62,26 +63,39 @@ fun BackgroundLoginScreen(someTheme: ColorScheme) {
 
 @Composable
 fun LoginScreen(navController: NavController) {
-    var someTheme= MaterialTheme.colorScheme
+    var someTheme = MaterialTheme.colorScheme
     var email by remember { mutableStateOf("") }
-    var senha  by remember { mutableStateOf("") }
+    var senha by remember { mutableStateOf("") }
 
     BackgroundLoginScreen(someTheme)
     Box(
         modifier = Modifier.fillMaxSize(),
     ) {
-        Icon(Icons.Filled.Close, contentDescription = stringResource(id = R.string.voltar), modifier = Modifier.size(50.dp).padding(top = 25.dp).clickable { navController.popBackStack() })
+        Icon(
+            Icons.Filled.Close,
+            contentDescription = stringResource(id = R.string.voltar),
+            modifier = Modifier
+                .size(50.dp)
+                .padding(top = 25.dp)
+                .clickable { navController.popBackStack() }
+        )
     }
     Column(
-        modifier = Modifier.fillMaxWidth().fillMaxHeight().padding(top = 200.dp),
+        modifier = Modifier
+            .fillMaxWidth()
+            .fillMaxHeight()
+            .padding(top = 200.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
     ) {
         TextField(
-            label = { Text(stringResource(id = R.string.email)) },
+            label = { Text(stringResource(id = R.string.email), fontFamily = poppinsFontFamily) },
             value = email,
             onValueChange = { email = it },
-            modifier = Modifier.width(310.dp).height(90.dp).padding(top = 30.dp),
+            modifier = Modifier
+                .width(310.dp)
+                .height(90.dp)
+                .padding(top = 30.dp),
             shape = RoundedCornerShape(8.dp),
             leadingIcon = {
                 Icon(
@@ -93,15 +107,23 @@ fun LoginScreen(navController: NavController) {
             }
         )
         TextField(
-            label = { Text(stringResource(id = R.string.senha)) },
+            label = { Text(stringResource(id = R.string.senha), fontFamily = poppinsFontFamily) },
             value = senha,
             onValueChange = { senha = it },
-            modifier = Modifier.width(310.dp).height(90.dp).padding(top = 30.dp),
+            modifier = Modifier
+                .width(310.dp)
+                .height(90.dp)
+                .padding(top = 30.dp),
             shape = RoundedCornerShape(8.dp),
             visualTransformation = PasswordVisualTransformation(),
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
             leadingIcon = {
-                Icon(Icons.Filled.Lock, "", tint = someTheme.onTertiary, modifier = Modifier.size(30.dp))
+                Icon(
+                    Icons.Filled.Lock,
+                    "",
+                    tint = someTheme.onTertiary,
+                    modifier = Modifier.size(30.dp)
+                )
             }
         )
         Text(
@@ -110,26 +132,62 @@ fun LoginScreen(navController: NavController) {
             textDecoration = TextDecoration.Underline,
             fontWeight = FontWeight.Bold,
             color = someTheme.onTertiary,
-            modifier = Modifier.padding(end = 170.dp).clickable { navController.navigate("ForgotPassword") }
+            modifier = Modifier
+                .padding(end = 170.dp)
+                .clickable { navController.navigate("ForgotPassword") },
+            fontFamily = poppinsFontFamily
         )
         Button(
             onClick = {},
             shape = RoundedCornerShape(10.dp),
-            modifier = Modifier.padding(top = 30.dp).width(310.dp).height(50.dp),
+            modifier = Modifier
+                .padding(top = 30.dp)
+                .width(310.dp)
+                .height(50.dp),
             colors = ButtonDefaults.buttonColors(containerColor = someTheme.onTertiary),
         ) {
-            Text(stringResource(id = R.string.entrar), fontWeight = FontWeight.Bold, fontSize = 20.sp)
+            Text(
+                stringResource(id = R.string.entrar),
+                fontWeight = FontWeight.Bold,
+                fontSize = 20.sp,
+                fontFamily = poppinsFontFamily
+            )
         }
 
-        Text(stringResource(id = R.string.ou_faca_login), fontWeight = FontWeight.Bold, color = someTheme.onTertiary, modifier = Modifier.padding(top = 80.dp))
+        Text(
+            stringResource(id = R.string.ou_faca_login),
+            fontWeight = FontWeight.Bold,
+            color = someTheme.onTertiary,
+            modifier = Modifier.padding(top = 80.dp),
+            fontFamily = poppinsFontFamily
+        )
 
         Row(
-            modifier = Modifier.padding(top = 20.dp).fillMaxWidth(),
+            modifier = Modifier
+                .padding(top = 20.dp)
+                .fillMaxWidth(),
             horizontalArrangement = Arrangement.Center
         ) {
-            Image(painterResource(R.drawable.google), contentDescription = stringResource(id = R.string.google), modifier = Modifier.size(70.dp).padding(end = 30.dp, bottom = 20.dp))
-            Image(painterResource(R.drawable.instagram), contentDescription = stringResource(id = R.string.instagram), modifier = Modifier.size(50.dp))
-            Image(painterResource(R.drawable.facebook), contentDescription = stringResource(id = R.string.facebook), modifier = Modifier.size(70.dp).padding(start = 30.dp, bottom = 20.dp))
+            Image(
+                painterResource(R.drawable.google),
+                contentDescription = stringResource(id = R.string.google),
+                modifier = Modifier
+                    .size(70.dp)
+                    .padding(end = 30.dp, bottom = 20.dp)
+            )
+            Image(
+                painterResource(R.drawable.instagram),
+                contentDescription = stringResource(id = R.string.instagram),
+                modifier = Modifier
+                    .size(50.dp)
+            )
+            Image(
+                painterResource(R.drawable.facebook),
+                contentDescription = stringResource(id = R.string.facebook),
+                modifier = Modifier
+                    .size(70.dp)
+                    .padding(start = 30.dp, bottom = 20.dp)
+            )
         }
     }
 }

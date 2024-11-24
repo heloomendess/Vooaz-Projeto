@@ -6,10 +6,8 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
-
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -38,7 +36,6 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
-
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -46,6 +43,8 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.vooazdomain.Vooaz.R
 import com.vooazdomain.Vooaz.ui.theme.VooazTheme
+import com.vooazdomain.Vooaz.ui.theme.poppinsFontFamily
+
 
 @Composable
 fun BackgroundColorChangePassword(someThemes: ColorScheme) {
@@ -83,8 +82,7 @@ fun ChangePasswordScreen(navController: NavController) {
 
     Box(
         modifier = Modifier.fillMaxSize(),
-
-        ) {
+    ) {
         Icon(
             Icons.Filled.Close,
             contentDescription = stringResource(R.string.voltar),
@@ -106,8 +104,9 @@ fun ChangePasswordScreen(navController: NavController) {
             stringResource(R.string.crie_uma_nova_senha),
             fontSize = 20.sp,
             fontWeight = FontWeight.Bold,
-            color =someThemes.onTertiary,
-            modifier = Modifier.padding(bottom = 10.dp)
+            color = someThemes.onTertiary,
+            modifier = Modifier.padding(bottom = 10.dp),
+            fontFamily = poppinsFontFamily // Adicionando a fonte Poppins
         )
 
         TextField(
@@ -126,7 +125,13 @@ fun ChangePasswordScreen(navController: NavController) {
                     modifier = Modifier.size(30.dp)
                 )
             },
-            label = { Text(stringResource(R.string.nova_senha)) })
+            label = {
+                Text(
+                    stringResource(R.string.nova_senha),
+                    fontFamily = poppinsFontFamily // Adicionando a fonte Poppins
+                )
+            }
+        )
 
         TextField(
             value = confirmPassword,
@@ -144,11 +149,16 @@ fun ChangePasswordScreen(navController: NavController) {
                     modifier = Modifier.size(30.dp)
                 )
             },
-            label = { Text(stringResource(R.string.confirmar_senha)) })
+            label = {
+                Text(
+                    stringResource(R.string.confirmar_senha),
+                    fontFamily = poppinsFontFamily // Adicionando a fonte Poppins
+                )
+            }
+        )
 
         Button(
             onClick = {
-
                 navController.navigate("InputScreen")
             },
             shape = RoundedCornerShape(20.dp),
@@ -156,9 +166,14 @@ fun ChangePasswordScreen(navController: NavController) {
                 .padding(top = 30.dp)
                 .width(200.dp)
                 .height(50.dp),
-            colors = ButtonDefaults.buttonColors(containerColor =someThemes.onTertiary),
+            colors = ButtonDefaults.buttonColors(containerColor = someThemes.onTertiary),
         ) {
-            Text(stringResource(R.string.resetar_senha), fontWeight = FontWeight.Bold, color = Color.White)
+            Text(
+                stringResource(R.string.resetar_senha),
+                fontWeight = FontWeight.Bold,
+                color = Color.White,
+                fontFamily = poppinsFontFamily // Adicionando a fonte Poppins
+            )
         }
     }
 }

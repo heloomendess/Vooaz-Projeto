@@ -23,6 +23,7 @@ import androidx.navigation.compose.rememberNavController
 import com.vooazdomain.Vooaz.R
 import com.vooazdomain.Vooaz.ui.theme.VooazTheme
 import androidx.compose.ui.res.stringResource
+import com.vooazdomain.Vooaz.ui.theme.poppinsFontFamily
 
 @Composable
 fun BackgroundInputScreen(someTheme: ColorScheme) {
@@ -51,7 +52,7 @@ fun BackgroundInputScreen(someTheme: ColorScheme) {
 
 @Composable
 fun InputScreen(navController: NavController) {
-    var someTheme=MaterialTheme.colorScheme
+    var someTheme = MaterialTheme.colorScheme
     BackgroundInputScreen(someTheme)
 
     Column(
@@ -73,7 +74,8 @@ fun InputScreen(navController: NavController) {
             Text(
                 text = stringResource(id = R.string.register),
                 fontSize = 20.sp,
-                fontWeight = FontWeight.Bold
+                fontWeight = FontWeight.Bold,
+                fontFamily = poppinsFontFamily
             )
         }
         Button(
@@ -88,6 +90,7 @@ fun InputScreen(navController: NavController) {
             Text(
                 text = stringResource(id = R.string.login),
                 fontSize = 20.sp,
+                fontFamily = poppinsFontFamily,
                 fontWeight = FontWeight.Bold
             )
         }
@@ -105,6 +108,7 @@ fun InputScreen(navController: NavController) {
             Text(
                 text = stringResource(id = R.string.know_more),
                 fontWeight = FontWeight.Bold,
+                fontFamily = poppinsFontFamily,
                 modifier = Modifier.padding(end = 5.dp)
             )
 
@@ -112,6 +116,7 @@ fun InputScreen(navController: NavController) {
                 text = stringResource(id = R.string.about_us),
                 color = someTheme.onTertiary,
                 fontWeight = FontWeight.Bold,
+                fontFamily = poppinsFontFamily,
             )
         }
     }

@@ -27,7 +27,8 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.vooazdomain.Vooaz.R
-import com.vooazdomain.Vooaz.telas.plan.poppinsFontFamily
+
+import com.vooazdomain.Vooaz.ui.theme.*  // Importando as cores do tema
 import com.vooazdomain.Vooaz.ui.theme.VooazTheme
 import androidx.compose.ui.res.stringResource
 

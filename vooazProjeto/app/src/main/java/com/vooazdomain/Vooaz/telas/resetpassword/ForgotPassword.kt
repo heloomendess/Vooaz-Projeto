@@ -20,7 +20,6 @@ import androidx.compose.material.icons.filled.Email
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ColorScheme
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -42,54 +41,104 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.vooazdomain.Vooaz.R
+import com.vooazdomain.Vooaz.ui.theme.poppinsFontFamily
 
 @Composable
-fun BackgroundForgotPassword(someThemes: ColorScheme){
-    Box(modifier = Modifier.background(color =someThemes.onBackground).fillMaxSize())
+fun BackgroundForgotPassword(someThemes: ColorScheme) {
+    Box(modifier = Modifier.background(color = someThemes.onBackground).fillMaxSize())
     Box(
         modifier = Modifier.fillMaxSize(),
-    ){
-        Image(painterResource(R.drawable.womanforgotpassword), contentDescription = stringResource(R.string.woman_forgot_icon), modifier = Modifier.height(400.dp).width(300.dp).align(Alignment.TopCenter).padding(top= 70.dp))
+    ) {
+        Image(
+            painterResource(R.drawable.womanforgotpassword),
+            contentDescription = stringResource(R.string.woman_forgot_icon),
+            modifier = Modifier.height(400.dp).width(300.dp).align(Alignment.TopCenter).padding(top = 70.dp)
+        )
     }
 }
 
 @Composable
-fun ForgotPasswordScreen(navController: NavController){
-    var email by remember { mutableStateOf("")}
+fun ForgotPasswordScreen(navController: NavController) {
+    var email by remember { mutableStateOf("") }
     var someThemes = MaterialTheme.colorScheme
 
     BackgroundForgotPassword(someThemes)
     Box(
         modifier = Modifier.fillMaxSize(),
-    ){
-        Icon(Icons.Filled.Close, contentDescription = stringResource(R.string.voltar), modifier = Modifier.size(50.dp).padding(top=20.dp).clickable { navController.popBackStack() })
+    ) {
+        Icon(
+            Icons.Filled.Close,
+            contentDescription = stringResource(R.string.voltar),
+            modifier = Modifier.size(50.dp).padding(top = 20.dp).clickable { navController.popBackStack() }
+        )
     }
 
     Column(
-        modifier= Modifier.fillMaxHeight().fillMaxWidth().padding(top=230.dp),
+        modifier = Modifier.fillMaxHeight().fillMaxWidth().padding(top = 230.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
     ) {
-        Text(stringResource(R.string.esqueceu_a_senha), fontSize = 30.sp, fontWeight = FontWeight.Bold, color=someThemes.secondary)
-        Text(stringResource(R.string.email_instructions), fontSize = 12.sp, modifier = Modifier.padding(top = 15.dp), color= someThemes.onSecondary)
-        Text(stringResource(R.string.password_reminder), fontSize= 10.sp, modifier = Modifier.padding(top = 10.dp),color= someThemes.onSecondary)
-        TextField(value = email, onValueChange = {email = it}, modifier = Modifier.width(290.dp).height(90.dp).padding(top = 30.dp), shape = RoundedCornerShape(8.dp), leadingIcon  = {
-            Icon(Icons.Filled.Email,"", tint =someThemes.onTertiary, modifier = Modifier.size(30.dp) )
-        })
-        Button( onClick = {
-            navController.navigate("ForgotPasswordPin")
-        },
+        Text(
+            stringResource(R.string.esqueceu_a_senha),
+            fontSize = 30.sp,
+            fontWeight = FontWeight.Bold,
+            color = someThemes.secondary,
+            fontFamily = poppinsFontFamily // Adicionando a fonte Poppins
+        )
+        Text(
+            stringResource(R.string.email_instructions),
+            fontSize = 12.sp,
+            modifier = Modifier.padding(top = 15.dp),
+            color = someThemes.onSecondary,
+            fontFamily = poppinsFontFamily // Adicionando a fonte Poppins
+        )
+        Text(
+            stringResource(R.string.password_reminder),
+            fontSize = 10.sp,
+            modifier = Modifier.padding(top = 10.dp),
+            color = someThemes.onSecondary,
+            fontFamily = poppinsFontFamily // Adicionando a fonte Poppins
+        )
+        TextField(
+            value = email,
+            onValueChange = { email = it },
+            modifier = Modifier.width(290.dp).height(90.dp).padding(top = 30.dp),
+            shape = RoundedCornerShape(8.dp),
+            leadingIcon = {
+                Icon(
+                    Icons.Filled.Email,
+                    "",
+                    tint = someThemes.onTertiary,
+                    modifier = Modifier.size(30.dp)
+                )
+            },
+            label = {
+                Text(
+                    stringResource(R.string.email),
+                    fontFamily = poppinsFontFamily // Adicionando a fonte Poppins
+                )
+            }
+        )
+        Button(
+            onClick = {
+                navController.navigate("ForgotPasswordPin")
+            },
             shape = RoundedCornerShape(20.dp),
             modifier = Modifier.padding(top = 30.dp).width(200.dp).height(50.dp),
             colors = ButtonDefaults.buttonColors(containerColor = someThemes.onTertiary),
         ) {
-            Text(stringResource(R.string.enviar_email), fontWeight = FontWeight.Bold, color= someThemes.onSecondary)
+            Text(
+                stringResource(R.string.enviar_email),
+                fontWeight = FontWeight.Bold,
+                color = someThemes.onSecondary,
+                fontFamily = poppinsFontFamily // Adicionando a fonte Poppins
+            )
         }
     }
 }
 
 @Preview(showBackground = true, heightDp = 800, widthDp = 360)
 @Composable
-fun ForgotPasswordPreview(){
+fun ForgotPasswordPreview() {
     ForgotPasswordScreen(rememberNavController())
 }
