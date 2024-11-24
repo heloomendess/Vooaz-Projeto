@@ -51,17 +51,8 @@ fun BackgroundColorChangePassword() {
             .background(
                 color = Color(0xFF4059AD)
             )
-            .fillMaxWidth()
-            .fillMaxHeight()
+            .fillMaxSize()
     )
-
-
-}
-
-
-@Composable
-fun IconsVooazChangePasswordScreen() {
-    BackgroundColorChangePassword()
     Box(
         modifier = Modifier
             .fillMaxWidth()
@@ -74,55 +65,98 @@ fun IconsVooazChangePasswordScreen() {
             modifier = Modifier.size(350.dp),
         )
     }
+
 }
+
 @Composable
-fun ContentChangePasswordScreen(navController: NavController){
-    var password by remember { mutableStateOf("")}
-    var confirmPassword by remember { mutableStateOf("")}
+fun ChangePasswordScreen(navController: NavController) {
+    var password by remember { mutableStateOf("") }
+    var confirmPassword by remember { mutableStateOf("") }
 
     var equalsPassword = false
     val context = LocalContext.current
 
+    BackgroundColorChangePassword()
+
     Box(
         modifier = Modifier.fillMaxSize(),
 
-        ){
-        Icon(Icons.Filled.Close, contentDescription = "Voltar", modifier = Modifier.size(50.dp).padding(top=20.dp).clickable { navController.popBackStack() })}
-    Column (
-        modifier = Modifier.fillMaxHeight().fillMaxWidth().padding(top = 80.dp),
+        ) {
+        Icon(
+            Icons.Filled.Close,
+            contentDescription = "Voltar",
+            modifier = Modifier
+                .size(50.dp)
+                .padding(top = 20.dp)
+                .clickable { navController.popBackStack() })
+    }
+    Column(
+        modifier = Modifier
+            .fillMaxHeight()
+            .fillMaxWidth()
+            .padding(top = 80.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
     ) {
 
-    Text("Crie uma nova senha", fontSize = 20.sp, fontWeight = FontWeight.Bold, color = Color(0xFFF4B942), modifier = Modifier.padding(bottom = 10.dp))
+        Text(
+            "Crie uma nova senha",
+            fontSize = 20.sp,
+            fontWeight = FontWeight.Bold,
+            color = Color(0xFFF4B942),
+            modifier = Modifier.padding(bottom = 10.dp)
+        )
 
-    TextField(value = password, onValueChange = { password = it }, modifier = Modifier.width(310.dp).height(110.dp).padding(top = 30.dp),  shape = RoundedCornerShape(8.dp), leadingIcon  = {
-        Icon(Icons.Filled.Lock,"", tint =Color(0xFFFF9E00), modifier = Modifier.size(30.dp) )
-    }, label = {Text("Nova Senha")})
+        TextField(
+            value = password,
+            onValueChange = { password = it },
+            modifier = Modifier
+                .width(310.dp)
+                .height(110.dp)
+                .padding(top = 30.dp),
+            shape = RoundedCornerShape(8.dp),
+            leadingIcon = {
+                Icon(
+                    Icons.Filled.Lock,
+                    "",
+                    tint = Color(0xFFFF9E00),
+                    modifier = Modifier.size(30.dp)
+                )
+            },
+            label = { Text("Nova Senha") })
 
-        TextField(value = confirmPassword , onValueChange = { confirmPassword = it }, modifier = Modifier.width(310.dp).height(110.dp).padding(top = 30.dp),  shape = RoundedCornerShape(8.dp), leadingIcon  = {
-            Icon(Icons.Filled.Lock,"", tint =Color(0xFFFF9E00), modifier = Modifier.size(30.dp) )
-        }, label = {Text("Confirmar Senha")})
+        TextField(
+            value = confirmPassword,
+            onValueChange = { confirmPassword = it },
+            modifier = Modifier
+                .width(310.dp)
+                .height(110.dp)
+                .padding(top = 30.dp),
+            shape = RoundedCornerShape(8.dp),
+            leadingIcon = {
+                Icon(
+                    Icons.Filled.Lock,
+                    "",
+                    tint = Color(0xFFFF9E00),
+                    modifier = Modifier.size(30.dp)
+                )
+            },
+            label = { Text("Confirmar Senha") })
 
-        Button( onClick ={
+        Button(
+            onClick = {
 
-            navController.navigate("InputScreen")
-        },
-            shape =   RoundedCornerShape(20.dp),
-            modifier = Modifier.padding(top = 30.dp).width(200.dp).height(50.dp),
-            colors =  ButtonDefaults.buttonColors(containerColor = Color(0xFFF4B942)),
+                navController.navigate("InputScreen")
+            },
+            shape = RoundedCornerShape(20.dp),
+            modifier = Modifier
+                .padding(top = 30.dp)
+                .width(200.dp)
+                .height(50.dp),
+            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFF4B942)),
         ) {
-            Text("Resetar Senha", fontWeight = FontWeight.Bold, color =  Color.White)
+            Text("Resetar Senha", fontWeight = FontWeight.Bold, color = Color.White)
         }
-}
-}
-@Composable
-fun ChangePasswordScreen(navController: NavController) {
-    VooazTheme {
-        IconsVooazChangePasswordScreen()
-        ContentChangePasswordScreen(navController)
-
-
     }
 }
 
@@ -130,9 +164,6 @@ fun ChangePasswordScreen(navController: NavController) {
 @Composable
 fun ChangePasswordScreenPreview() {
     VooazTheme {
-
-        IconsVooazChangePasswordScreen()
-        ContentChangePasswordScreen(rememberNavController())
-
+        ChangePasswordScreen(rememberNavController())
     }
 }

@@ -51,22 +51,36 @@ import com.vooazdomain.Vooaz.R
 import com.vooazdomain.Vooaz.ui.theme.VooazTheme
 
 @Composable
-fun BackgroundColorLogin() {
+fun BackgroundLoginScreen() {
     Box(
         modifier = Modifier
             .background(
                 color = Color(0xFF4059AD)
             )
-            .fillMaxWidth()
-            .fillMaxHeight()
+            .fillMaxSize()
     )
+    Box(
+        modifier = Modifier
+            .fillMaxWidth()
+            .fillMaxHeight(),
+        contentAlignment = Alignment.TopCenter
+    ) {
+        Image(
+            painterResource(R.drawable.logoaz),
+            contentDescription = "Logo",
+            modifier = Modifier.size(300.dp),
+        )
+    }
 }
 
 @Composable
-fun ContentLoginScreen(navController: NavController
-) {
+fun LoginScreen(navController: NavController) {
+
     var email by remember { mutableStateOf("") }
     var senha  by remember { mutableStateOf("") }
+
+
+    BackgroundLoginScreen()
     Box(
         modifier = Modifier.fillMaxSize(),
 
@@ -120,38 +134,10 @@ fun ContentLoginScreen(navController: NavController
         }
 }
 
-@Composable
-fun IconsVooazLogin() {
-    BackgroundColorLogin()
-    Box(
-        modifier = Modifier
-            .fillMaxWidth()
-            .fillMaxHeight(),
-        contentAlignment = Alignment.TopCenter
-    ) {
-        Image(
-            painterResource(R.drawable.logoaz),
-            contentDescription = "Logo",
-            modifier = Modifier.size(300.dp),
-        )
-    }
-}
-
-@Composable
-fun LoginScreen(navController: NavController) {
-    VooazTheme {
-
-        IconsVooazLogin()
-        ContentLoginScreen(navController)
-    }
-}
-
 @Preview(showBackground = true, widthDp = 390, heightDp = 800)
 @Composable
 fun LoginPreview() {
     VooazTheme {
-
-        IconsVooazLogin()
-        ContentLoginScreen(rememberNavController())
+        LoginScreen(rememberNavController())
     }
 }
