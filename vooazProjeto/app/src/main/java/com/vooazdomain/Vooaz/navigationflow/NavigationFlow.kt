@@ -64,7 +64,7 @@ fun NavigationFlowSettings() {
         },
         // Adicione a bottomBar apenas quando a rota for "PlanScreenSuggestion"
         bottomBar = {
-            if (currentRoute == "ForgotPasswordPin") {
+            if (currentRoute == "") {
                 navegationBar(navController)
             }
         }
