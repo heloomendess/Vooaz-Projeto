@@ -1,14 +1,9 @@
-package com.vooazdomain.Vooaz.telas
+package com.vooazdomain.Vooaz.telas.plan
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
@@ -22,12 +17,11 @@ import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.vooazdomain.Vooaz.R
 import com.vooazdomain.Vooaz.ui.theme.VooazTheme
-import navegationBar
+import androidx.compose.ui.res.stringResource
 
 @Composable
 fun PlanSuggestionScreen(navController: NavHostController) {
@@ -42,9 +36,8 @@ fun PlanSuggestionScreen(navController: NavHostController) {
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-
             Text(
-                text = "Explore nossos \nplanos!",
+                text = stringResource(id = R.string.explore_nossos_planos),
                 fontSize = 36.sp,
                 color = Color(0xFFF4B942),
                 fontWeight = FontWeight.Bold,
@@ -60,7 +53,7 @@ fun PlanSuggestionScreen(navController: NavHostController) {
                 colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF97D8C4))
             ) {
                 Text(
-                    "Conhecer Premium",
+                    stringResource(id = R.string.conhecer_premium),
                     fontSize = 20.sp,
                     fontWeight = FontWeight.Bold,
                     color = Color.Black
@@ -68,7 +61,7 @@ fun PlanSuggestionScreen(navController: NavHostController) {
             }
 
             Text(
-                text = "Deixar para depois",
+                text = stringResource(id = R.string.deixar_para_depois),
                 textDecoration = TextDecoration.Underline,
                 color = Color.White,
                 fontWeight = FontWeight.Bold,
@@ -86,7 +79,7 @@ fun BackgroundAirport() {
     Box(modifier = Modifier.fillMaxSize()) {
         Image(
             painter = painterResource(R.drawable.background_airport),
-            contentDescription = "Airport background",
+            contentDescription = stringResource(id = R.string.background_airport_desc),
             modifier = Modifier
                 .fillMaxSize()
                 .padding(bottom = 200.dp)

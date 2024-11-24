@@ -1,4 +1,4 @@
-package com.vooazdomain.Vooaz.telas
+package com.vooazdomain.Vooaz.telas.paymentflow
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
@@ -26,7 +26,9 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.vooazdomain.Vooaz.R
+import com.vooazdomain.Vooaz.telas.plan.poppinsFontFamily
 import com.vooazdomain.Vooaz.ui.theme.VooazTheme
+import androidx.compose.ui.res.stringResource
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -43,7 +45,7 @@ fun PagamentoFeito(navController: NavController) {
                     IconButton(onClick = { }) {
                         Image(
                             painter = painterResource(id = R.drawable.arrowback),
-                            contentDescription = "Voltar",
+                            contentDescription = stringResource(id = R.string.voltar),
                             modifier = Modifier.size(50.dp)
                         )
                     }
@@ -52,7 +54,7 @@ fun PagamentoFeito(navController: NavController) {
                     IconButton(onClick = { }) {
                         Image(
                             painter = painterResource(id = R.drawable.close),
-                            contentDescription = "Fechar",
+                            contentDescription = stringResource(id = R.string.fechar),
                             modifier = Modifier.size(50.dp)
                         )
                     }
@@ -68,13 +70,13 @@ fun PagamentoFeito(navController: NavController) {
             ) {
                 Image(
                     painter = painterResource(id = R.drawable.pagamento_feito),
-                    contentDescription = "",
+                    contentDescription = stringResource(id = R.string.pagamento_feito_desc),
                     modifier = Modifier
                         .size(455.dp)
                         .padding(
                             top = 0.dp,
-                            bottom = 40.dp)
-
+                            bottom = 40.dp
+                        )
                 )
                 Button(
                     onClick = { },
@@ -88,10 +90,11 @@ fun PagamentoFeito(navController: NavController) {
                         .align(Alignment.Center)
                         .padding(
                             top = 60.dp,
-                            bottom = 0.dp)
+                            bottom = 0.dp
+                        )
                 ) {
                     Text(
-                        text = "Entrar",
+                        text = stringResource(id = R.string.entrar),
                         fontSize = 30.sp,
                         fontWeight = FontWeight.Bold,
                         fontFamily = poppinsFontFamily,
@@ -101,7 +104,6 @@ fun PagamentoFeito(navController: NavController) {
         }
     )
 }
-
 
 @Preview(showBackground = true, widthDp = 390, heightDp = 800 )
 @Composable

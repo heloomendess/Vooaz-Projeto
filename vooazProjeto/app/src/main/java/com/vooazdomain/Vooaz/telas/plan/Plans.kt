@@ -1,4 +1,4 @@
-package com.vooazdomain.Vooaz.telas
+package com.vooazdomain.Vooaz.telas.plan
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
@@ -28,6 +28,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
@@ -62,7 +63,7 @@ fun Planos(navController: NavController) {
                     IconButton(onClick = { }) {
                         Image(
                             painter = painterResource(id = R.drawable.arrowback),
-                            contentDescription = "Voltar",
+                            contentDescription =  stringResource(R.string.voltar),
                             modifier = Modifier.size(50.dp)
                         )
                     }
@@ -78,7 +79,7 @@ fun Planos(navController: NavController) {
             ) {
                 item {
                     Text(
-                        text = "Explore Nossos\nPlanos!",
+                        stringResource(R.string.explore_nossos_planos),
                         fontFamily = poppinsFontFamily,
                         fontWeight = FontWeight.Bold,
                         fontSize = 30.sp,
@@ -123,7 +124,7 @@ fun Planos(navController: NavController) {
 
                             ) {
                                 Text(
-                                    text = "Continuar Grátis",
+                                    stringResource(R.string.continuar_gratis),
                                     fontFamily = poppinsFontFamily,
                                     fontWeight = FontWeight.Bold,
                                     fontSize = 20.sp
@@ -168,7 +169,7 @@ fun Planos(navController: NavController) {
 
                             ) {
                                 Text(
-                                    text = "Obter Plano",
+                                    text = stringResource(R.string.obter_plano),
                                     fontFamily = poppinsFontFamily,
                                     fontWeight = FontWeight.Bold,
                                     fontSize = 20.sp
@@ -212,7 +213,7 @@ fun Planos(navController: NavController) {
 
                             ) {
                                 Text(
-                                    text = "Obter Plano",
+                                    text = stringResource(R.string.obter_plano),
                                     fontFamily = poppinsFontFamily,
                                     fontWeight = FontWeight.Bold,
                                     fontSize = 20.sp
