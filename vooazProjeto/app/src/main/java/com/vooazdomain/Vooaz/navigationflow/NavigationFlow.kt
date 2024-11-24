@@ -14,6 +14,7 @@ import com.vooazdomain.Vooaz.telas.inputflow.InputScreen
 import com.vooazdomain.Vooaz.telas.inputflow.LoginScreen
 import com.vooazdomain.Vooaz.telas.plan.PlanSuggestionScreen
 import com.vooazdomain.Vooaz.telas.inputflow.RegisterAccountContent
+import com.vooazdomain.Vooaz.telas.plan.Plans
 import com.vooazdomain.Vooaz.telas.resetpassword.ChangePasswordScreen
 import com.vooazdomain.Vooaz.telas.resetpassword.ForgotPasswordPinScreen
 import com.vooazdomain.Vooaz.telas.resetpassword.ForgotPasswordScreen
@@ -30,12 +31,15 @@ fun NavigationFlowSettings() {
             innerPadding
             NavHost(
                 navController = navController,
-                startDestination = "PlanScreenSuggestion"
+                startDestination = "ForgotPasswordPin"
             ) {
 
 
                 composable("PlanScreenSuggestion") {
                     PlanSuggestionScreen(navController)
+                }
+                composable("Plans") {
+                    Plans(navController)
                 }
 
                 composable("ForgotPassword") {
@@ -60,7 +64,7 @@ fun NavigationFlowSettings() {
         },
         // Adicione a bottomBar apenas quando a rota for "PlanScreenSuggestion"
         bottomBar = {
-            if (currentRoute == "TestScreen") {
+            if (currentRoute == "") {
                 navegationBar(navController)
             }
         }

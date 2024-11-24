@@ -6,6 +6,8 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.ColorScheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -23,11 +25,12 @@ import com.vooazdomain.Vooaz.ui.theme.VooazTheme
 import androidx.compose.ui.res.stringResource
 
 @Composable
-fun BackgroundInputScreen() {
+fun BackgroundInputScreen(someTheme: ColorScheme) {
+
     Box(
         modifier = Modifier
             .background(
-                color = Color(0xFF4059AD)
+                color = someTheme.onBackground
             )
             .fillMaxWidth()
             .fillMaxHeight()
@@ -41,14 +44,15 @@ fun BackgroundInputScreen() {
         Image(
             painterResource(R.drawable.logoaz),
             contentDescription = stringResource(id = R.string.logo_description),
-            modifier = Modifier.size(400.dp),
+            modifier = Modifier.size(350.dp),
         )
     }
 }
 
 @Composable
 fun InputScreen(navController: NavController) {
-    BackgroundInputScreen()
+    var someTheme=MaterialTheme.colorScheme
+    BackgroundInputScreen(someTheme)
 
     Column(
         modifier = Modifier
@@ -63,7 +67,7 @@ fun InputScreen(navController: NavController) {
                 .width(300.dp)
                 .height(90.dp)
                 .padding(bottom = 10.dp),
-            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF0E2C8F)),
+            colors = ButtonDefaults.buttonColors(containerColor = someTheme.background),
             shape = RoundedCornerShape(20.dp),
         ) {
             Text(
@@ -78,7 +82,7 @@ fun InputScreen(navController: NavController) {
                 .width(300.dp)
                 .height(90.dp)
                 .padding(top = 10.dp),
-            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFF4B942)),
+            colors = ButtonDefaults.buttonColors(containerColor = someTheme.onTertiary),
             shape = RoundedCornerShape(20.dp)
         ) {
             Text(
@@ -96,16 +100,18 @@ fun InputScreen(navController: NavController) {
         verticalAlignment = Alignment.Bottom,
         horizontalArrangement = Arrangement.Center
     ) {
-        Row {
+        Row(
+        ) {
             Text(
                 text = stringResource(id = R.string.know_more),
-                fontWeight = FontWeight.Bold
+                fontWeight = FontWeight.Bold,
+                modifier = Modifier.padding(end = 5.dp)
             )
 
             Text(
                 text = stringResource(id = R.string.about_us),
-                color = Color(0xFFF4B942),
-                fontWeight = FontWeight.Bold
+                color = someTheme.onTertiary,
+                fontWeight = FontWeight.Bold,
             )
         }
     }

@@ -14,6 +14,7 @@ import androidx.compose.material.icons.filled.Person
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Checkbox
+import androidx.compose.material3.ColorScheme
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
@@ -26,7 +27,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
-
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
@@ -40,14 +40,14 @@ import com.vooazdomain.Vooaz.R
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.withStyle
+import androidx.compose.material3.MaterialTheme
+import com.vooazdomain.Vooaz.ui.theme.*  // Importando as cores do tema
 
 @Composable
-fun BackgroundColorRegisterAccountScreen() {
+fun BackgroundColorRegisterAccountScreen(someThemes:ColorScheme) {
     Box(
         modifier = Modifier
-            .background(
-                color = Color(0xFF4059AD)
-            )
+            .background(color = someThemes.onBackground)  // Usando a cor do tema
             .fillMaxWidth()
             .fillMaxHeight()
     )
@@ -59,8 +59,8 @@ fun RegisterAccountContent(navController: NavController) {
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
     var checked by remember { mutableStateOf(true) }
-
-    BackgroundColorRegisterAccountScreen()
+    var someThemes = MaterialTheme.colorScheme
+    BackgroundColorRegisterAccountScreen(someThemes)
 
     Box() {
         Icon(Icons.Filled.Close, contentDescription = stringResource(id = R.string.close_button), modifier = Modifier.size(70.dp).padding(top = 25.dp).clickable { navController.popBackStack() })
@@ -78,7 +78,7 @@ fun RegisterAccountContent(navController: NavController) {
             Text(
                 text = stringResource(id = R.string.create_account_with),
                 fontSize = 18.sp,
-                color = Color(0xFFF4B942),
+                color = someThemes.onTertiary,  // Usando a cor amarela do tema
                 fontWeight = FontWeight.Bold
             )
         }
@@ -109,7 +109,7 @@ fun RegisterAccountContent(navController: NavController) {
             Text(
                 text = stringResource(id = R.string.or_else),
                 fontSize = 18.sp,
-                color = Color(0xFFF4B942),
+                color = someThemes.onTertiary,  // Usando a cor amarela do tema
                 fontWeight = FontWeight.Bold
             )
         }
@@ -117,7 +117,7 @@ fun RegisterAccountContent(navController: NavController) {
         Column(modifier = Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
             Text(
                 text = stringResource(id = R.string.name),
-                color = Color(0xFFF4B942),
+                color = someThemes.onTertiary,  // Usando a cor amarela do tema
                 modifier = Modifier.align(Alignment.Start).padding(start = 40.dp, top = 20.dp, bottom = 2.dp)
             )
 
@@ -130,7 +130,7 @@ fun RegisterAccountContent(navController: NavController) {
                     Icon(
                         Icons.Filled.Person,
                         "",
-                        tint = Color(0xFFFF9E00),
+                        tint = someThemes.onTertiary,  // Usando a cor amarela do tema
                         modifier = Modifier.size(30.dp)
                     )
                 }
@@ -138,7 +138,7 @@ fun RegisterAccountContent(navController: NavController) {
 
             Text(
                 text = stringResource(id = R.string.email),
-                color = Color(0xFFF4B942),
+                color = someThemes.onTertiary,  // Usando a cor amarela do tema
                 modifier = Modifier.align(Alignment.Start).padding(start = 40.dp, top = 20.dp, bottom = 2.dp)
             )
 
@@ -151,7 +151,7 @@ fun RegisterAccountContent(navController: NavController) {
                     Icon(
                         Icons.Filled.Email,
                         "",
-                        tint = Color(0xFFFF9E00),
+                        tint = someThemes.onTertiary,  // Usando a cor amarela do tema
                         modifier = Modifier.size(30.dp)
                     )
                 }
@@ -159,7 +159,7 @@ fun RegisterAccountContent(navController: NavController) {
 
             Text(
                 text = stringResource(id = R.string.password),
-                color = Color(0xFFF4B942),
+                color = someThemes.onTertiary,  // Usando a cor amarela do tema
                 modifier = Modifier.align(Alignment.Start).padding(start = 40.dp, top = 20.dp, bottom = 2.dp)
             )
 
@@ -174,7 +174,7 @@ fun RegisterAccountContent(navController: NavController) {
                     Icon(
                         Icons.Filled.Lock,
                         "",
-                        tint = Color(0xFFFF9E00),
+                        tint = someThemes.onTertiary,  // Usando a cor amarela do tema
                         modifier = Modifier.size(30.dp)
                     )
                 }
@@ -196,13 +196,23 @@ fun RegisterAccountContent(navController: NavController) {
                         text = buildAnnotatedString {
                             withStyle(
                                 SpanStyle(
-                                    color = Color(0xFFF4B942)
+                                    color = someThemes.onTertiary  // Usando a cor amarela do tema
                                 )
                             ) {
                                 append(stringResource(id = R.string.agree_terms))
                             }
-                            append(stringResource(id = R.string.terms_of_use))
-                            withStyle(SpanStyle(color = Color(0xFFF4B942))) {
+                            withStyle(SpanStyle(color = someThemes.onSecondaryContainer)) {
+                                append(stringResource(id = R.string.terms_of_use))
+                            }
+                            withStyle(
+                                SpanStyle(
+                                    color = someThemes.onTertiary  // Usando a cor amarela do tema
+                                )
+                            ) {
+                                append(stringResource(id = R.string.terms_of_use_e_nosso))
+                            }
+
+                            withStyle(SpanStyle(color = someThemes.onSecondaryContainer)) {
                                 append(stringResource(id = R.string.and_privacy_policy))
                             }
                         }
@@ -213,7 +223,7 @@ fun RegisterAccountContent(navController: NavController) {
                     onClick = {},
                     shape = RoundedCornerShape(10.dp),
                     modifier = Modifier.padding(top = 10.dp).width(310.dp).height(50.dp),
-                    colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFF4B942)),
+                    colors = ButtonDefaults.buttonColors(containerColor = someThemes.onTertiary),  // Usando a cor amarela do tema
                 ) {
                     Text(
                         text = stringResource(id = R.string.enter),

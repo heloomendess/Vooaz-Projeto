@@ -21,7 +21,9 @@ import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.ColorScheme
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
@@ -46,11 +48,11 @@ import com.vooazdomain.Vooaz.R
 import com.vooazdomain.Vooaz.ui.theme.VooazTheme
 
 @Composable
-fun BackgroundColorChangePassword() {
+fun BackgroundColorChangePassword(someThemes: ColorScheme) {
     Box(
         modifier = Modifier
             .background(
-                color = Color(0xFF4059AD)
+                color = someThemes.onBackground
             )
             .fillMaxSize()
     )
@@ -73,11 +75,11 @@ fun BackgroundColorChangePassword() {
 fun ChangePasswordScreen(navController: NavController) {
     var password by remember { mutableStateOf("") }
     var confirmPassword by remember { mutableStateOf("") }
-
     var equalsPassword = false
     val context = LocalContext.current
+    var someThemes = MaterialTheme.colorScheme
 
-    BackgroundColorChangePassword()
+    BackgroundColorChangePassword(someThemes)
 
     Box(
         modifier = Modifier.fillMaxSize(),
@@ -104,7 +106,7 @@ fun ChangePasswordScreen(navController: NavController) {
             stringResource(R.string.crie_uma_nova_senha),
             fontSize = 20.sp,
             fontWeight = FontWeight.Bold,
-            color = Color(0xFFF4B942),
+            color =someThemes.onTertiary,
             modifier = Modifier.padding(bottom = 10.dp)
         )
 
@@ -120,7 +122,7 @@ fun ChangePasswordScreen(navController: NavController) {
                 Icon(
                     Icons.Filled.Lock,
                     "",
-                    tint = Color(0xFFFF9E00),
+                    tint = someThemes.onTertiary,
                     modifier = Modifier.size(30.dp)
                 )
             },
@@ -138,7 +140,7 @@ fun ChangePasswordScreen(navController: NavController) {
                 Icon(
                     Icons.Filled.Lock,
                     "",
-                    tint = Color(0xFFFF9E00),
+                    tint = someThemes.onTertiary,
                     modifier = Modifier.size(30.dp)
                 )
             },
@@ -154,7 +156,7 @@ fun ChangePasswordScreen(navController: NavController) {
                 .padding(top = 30.dp)
                 .width(200.dp)
                 .height(50.dp),
-            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFF4B942)),
+            colors = ButtonDefaults.buttonColors(containerColor =someThemes.onTertiary),
         ) {
             Text(stringResource(R.string.resetar_senha), fontWeight = FontWeight.Bold, color = Color.White)
         }

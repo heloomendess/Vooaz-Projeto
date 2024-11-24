@@ -10,6 +10,7 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
@@ -34,13 +35,14 @@ import androidx.compose.ui.res.stringResource
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun PagamentoFeito(navController: NavController) {
+    var someTheme=MaterialTheme.colorScheme
     Scaffold(
         modifier = Modifier.fillMaxSize(),
-        containerColor = Color(0xFF0E2C8F),
+        containerColor =  someTheme.background,
         topBar = {
             TopAppBar(
                 title = { Text(text = "") },
-                colors = TopAppBarDefaults.smallTopAppBarColors(containerColor = Color(0xFF0E2C8F)),
+                colors = TopAppBarDefaults.smallTopAppBarColors(containerColor = someTheme.background),
                 navigationIcon = {
                     IconButton(onClick = { }) {
                         Image(
@@ -81,11 +83,11 @@ fun PagamentoFeito(navController: NavController) {
                 Button(
                     onClick = { },
                     colors = ButtonDefaults.buttonColors(
-                        containerColor = Color(0xFFF4B942),
-                        contentColor = Color.Black
+                        containerColor = someTheme.onTertiary,
+                        contentColor = someTheme.onSecondary
                     ),
                     shape = RoundedCornerShape(30.dp),
-                    border = androidx.compose.foundation.BorderStroke(2.dp, Color.Black),
+                    border = androidx.compose.foundation.BorderStroke(2.dp, someTheme.onSecondary),
                     modifier = Modifier
                         .align(Alignment.Center)
                         .padding(

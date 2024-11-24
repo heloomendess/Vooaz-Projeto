@@ -19,8 +19,10 @@ import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.Email
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.ColorScheme
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
@@ -42,8 +44,8 @@ import androidx.navigation.compose.rememberNavController
 import com.vooazdomain.Vooaz.R
 
 @Composable
-fun BackgroundForgotPassword(){
-    Box(modifier = Modifier.background(color = Color(0xFF2C58B0)).fillMaxSize())
+fun BackgroundForgotPassword(someThemes: ColorScheme){
+    Box(modifier = Modifier.background(color =someThemes.onBackground).fillMaxSize())
     Box(
         modifier = Modifier.fillMaxSize(),
     ){
@@ -54,8 +56,9 @@ fun BackgroundForgotPassword(){
 @Composable
 fun ForgotPasswordScreen(navController: NavController){
     var email by remember { mutableStateOf("")}
+    var someThemes = MaterialTheme.colorScheme
 
-    BackgroundForgotPassword()
+    BackgroundForgotPassword(someThemes)
     Box(
         modifier = Modifier.fillMaxSize(),
     ){
@@ -67,20 +70,20 @@ fun ForgotPasswordScreen(navController: NavController){
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
     ) {
-        Text(stringResource(R.string.esqueceu_a_senha), fontSize = 30.sp, fontWeight = FontWeight.Bold, color= Color(color = 0xFF97D8C4))
-        Text(stringResource(R.string.email_instructions), fontSize = 12.sp, modifier = Modifier.padding(top = 15.dp))
-        Text(stringResource(R.string.password_reminder), fontSize= 10.sp, modifier = Modifier.padding(top = 10.dp))
+        Text(stringResource(R.string.esqueceu_a_senha), fontSize = 30.sp, fontWeight = FontWeight.Bold, color=someThemes.secondary)
+        Text(stringResource(R.string.email_instructions), fontSize = 12.sp, modifier = Modifier.padding(top = 15.dp), color= someThemes.onSecondary)
+        Text(stringResource(R.string.password_reminder), fontSize= 10.sp, modifier = Modifier.padding(top = 10.dp),color= someThemes.onSecondary)
         TextField(value = email, onValueChange = {email = it}, modifier = Modifier.width(290.dp).height(90.dp).padding(top = 30.dp), shape = RoundedCornerShape(8.dp), leadingIcon  = {
-            Icon(Icons.Filled.Email,"", tint =Color(0xFFFF9E00), modifier = Modifier.size(30.dp) )
+            Icon(Icons.Filled.Email,"", tint =someThemes.onTertiary, modifier = Modifier.size(30.dp) )
         })
         Button( onClick = {
             navController.navigate("ForgotPasswordPin")
         },
             shape = RoundedCornerShape(20.dp),
             modifier = Modifier.padding(top = 30.dp).width(200.dp).height(50.dp),
-            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFF4B942)),
+            colors = ButtonDefaults.buttonColors(containerColor = someThemes.onTertiary),
         ) {
-            Text(stringResource(R.string.enviar_email), fontWeight = FontWeight.Bold)
+            Text(stringResource(R.string.enviar_email), fontWeight = FontWeight.Bold, color= someThemes.onSecondary)
         }
     }
 }

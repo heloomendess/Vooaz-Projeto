@@ -12,7 +12,9 @@ import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.ColorScheme
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
@@ -38,10 +40,10 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 
 @Composable
-fun BackgroundLoginScreen() {
+fun BackgroundLoginScreen(someTheme: ColorScheme) {
     Box(
         modifier = Modifier
-            .background(color = Color(0xFF4059AD))
+            .background(color = someTheme.onBackground)
             .fillMaxSize()
     )
     Box(
@@ -60,10 +62,11 @@ fun BackgroundLoginScreen() {
 
 @Composable
 fun LoginScreen(navController: NavController) {
+    var someTheme= MaterialTheme.colorScheme
     var email by remember { mutableStateOf("") }
     var senha  by remember { mutableStateOf("") }
 
-    BackgroundLoginScreen()
+    BackgroundLoginScreen(someTheme)
     Box(
         modifier = Modifier.fillMaxSize(),
     ) {
@@ -84,7 +87,7 @@ fun LoginScreen(navController: NavController) {
                 Icon(
                     Icons.Filled.Email,
                     "",
-                    tint = Color(0xFFFF9E00),
+                    tint = someTheme.onTertiary,
                     modifier = Modifier.size(30.dp)
                 )
             }
@@ -98,7 +101,7 @@ fun LoginScreen(navController: NavController) {
             visualTransformation = PasswordVisualTransformation(),
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
             leadingIcon = {
-                Icon(Icons.Filled.Lock, "", tint = Color(0xFFFF9E00), modifier = Modifier.size(30.dp))
+                Icon(Icons.Filled.Lock, "", tint = someTheme.onTertiary, modifier = Modifier.size(30.dp))
             }
         )
         Text(
@@ -106,19 +109,19 @@ fun LoginScreen(navController: NavController) {
             fontSize = 12.sp,
             textDecoration = TextDecoration.Underline,
             fontWeight = FontWeight.Bold,
-            color = Color(0xFFFF9E00),
+            color = someTheme.onTertiary,
             modifier = Modifier.padding(end = 170.dp).clickable { navController.navigate("ForgotPassword") }
         )
         Button(
             onClick = {},
             shape = RoundedCornerShape(10.dp),
             modifier = Modifier.padding(top = 30.dp).width(310.dp).height(50.dp),
-            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFF4B942)),
+            colors = ButtonDefaults.buttonColors(containerColor = someTheme.onTertiary),
         ) {
             Text(stringResource(id = R.string.entrar), fontWeight = FontWeight.Bold, fontSize = 20.sp)
         }
 
-        Text(stringResource(id = R.string.ou_faca_login), fontWeight = FontWeight.Bold, color = Color(0xFFF4B942), modifier = Modifier.padding(top = 80.dp))
+        Text(stringResource(id = R.string.ou_faca_login), fontWeight = FontWeight.Bold, color = someTheme.onTertiary, modifier = Modifier.padding(top = 80.dp))
 
         Row(
             modifier = Modifier.padding(top = 20.dp).fillMaxWidth(),
