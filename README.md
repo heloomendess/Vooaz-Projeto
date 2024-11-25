@@ -1,6 +1,6 @@
 # VOOAZ: O mundo é para Todos
 
-![equipe/abertura.png]
+![](equipe/abertura.png)
 
 ## Objetivo do projeto :round_pushpin:
 
@@ -39,21 +39,21 @@ Expandir a acessibilidade a outros públicos, onde começamos com a inclusão de
 
 Conheça os reponsáveis pelo projeto:
 
-![equipe/avatar-heloisa.jpg]
+![](equipe/avatar-heloisa.jpg)
 [Heloida Mendes: Product Owner/Social media](https://github.com/heloomendess)
-![equipe/avatar-danilo.jpg]
+![](equipe/avatar-danilo.jpg.jpg)
 [Danilo Alcantara: Scrum Master](https://github.com/danalcantara)
-![equipe/avatar-gustavo.jpg]
+![](equipe/avatar-gustavo.jpg.jpg)
 [Gustavo Cunha: Full-Stack](https://github.com/cunhagustavo)
-![equipe/avatar-iury.png]
+![](equipe/avatar-iury.png)
 [Iury Costa: Full-Stack](https://github.com/IurySven)
-![equipe/avatar-celio.jpg]
+![](equipe/avatar-celio.jpg)
 [Célio Amorim: Front-end/UX](https://github.com/AmorimCelio)
-![equipe/avatar-kawan.jpg]
+![](equipe/avatar-kawan.jpg)
 [Kawan Turchiai: Front-end](https://github.com/KawanTurchiai)
-![equipe/avatar-grazyelli.jpg]
+![](equipe/avatar-grazyelli.jpg)
 [Grazielly Cavalcante: Back-end e Financeiro](https://github.com/Grazy-Cavalcante)
-![equipe/avatar-mariana.jpg]
+![](equipe/avatar-mariana.jpg)
 [Mariana Paiva: Back-end](https://github.com/marianapa1va)
 
 ## Links Úteis 👨🏻‍💻
