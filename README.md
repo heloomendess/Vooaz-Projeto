@@ -40,27 +40,35 @@ Expandir a acessibilidade a outros públicos, onde começamos com a inclusão de
 Conheça os reponsáveis pelo projeto:
 
 [Heloida Mendes: Product Owner/Social media](https://github.com/heloomendess)
+
 ![Heloisa Mendes](equipe/avatar-heloisa.jpg)
 
 [Danilo Alcantara: Scrum Master](https://github.com/danalcantara)
-![Danilo Alcantara](equipe/avatar-danilo.jpg.jpg)
+
+![Danilo Alcantara](equipe/avatar-danilo.jpg)
 
 [Gustavo Cunha: Full-Stack](https://github.com/cunhagustavo)
-![Gustavo Cunha](equipe/avatar-gustavo.jpg.jpg)
+
+![Gustavo Cunha](equipe/avatar-gustavo.jpg)
 
 [Iury Costa: Full-Stack](https://github.com/IurySven)
-![Iury Costa](equipe/avatar-iury.png)
+
+![Iury Costa](equipe/avatar-iury.jpg)
 
 [Célio Amorim: Front-end/UX](https://github.com/AmorimCelio)
+
 ![Célio Amorim](equipe/avatar-celio.jpg)
 
 [Kawan Turchiai: Front-end](https://github.com/KawanTurchiai)
+
 ![Kawan Turchiai](equipe/avatar-kawan.jpg)
 
 [Grazielly Cavalcante: Back-end e Financeiro](https://github.com/Grazy-Cavalcante)
+
 ![Grazielly Cavalcante](equipe/avatar-grazyelli.jpg)
 
 [Mariana Paiva: Back-end](https://github.com/marianapa1va)
+
 ![Mariana Paiva](equipe/avatar-mariana.jpg)
 
 ## Links Úteis 👨🏻‍💻
