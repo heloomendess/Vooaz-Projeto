@@ -39,7 +39,7 @@ Expandir a acessibilidade a outros públicos, onde começamos com a inclusão de
 
 Conheça os reponsáveis pelo projeto:
 
-[Heloida Mendes: Product Owner/Social media](https://github.com/heloomendess)
+[Heloisa Mendes: Product Owner/Social media](https://github.com/heloomendess)
 
 ![Heloisa Mendes](equipe/avatar-heloisa.jpg)
 
