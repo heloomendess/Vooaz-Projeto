@@ -1,106 +1,77 @@
-#  VOOAZ- O mundo é para todos 😎
+# VOOAZ: O mundo é para Todos
 
-<div align="center">
-<img src="Abertura.png" />
-</div>
-<br/>
+![equipe/abertura.png]
 
-<h2> 🎯 Objetivo:</h2>
-   <p>
-     Nosso Objetivo, é criar um aplicativo voltado para pessoas com deficiência auditiva ou visual, que estão a procura de expandir seus horizontes. Buscamos tornar viagens mais acessíveis e inclusivas para esse público, através de guias especializados e uma comunidade interativa, voltada para a criação de relacionamentos entre usuários. Para tornar o projeto realidade, utilizamos a linguagem Kotlin, aplicada no Android studio, com Jackpack compose.
-   </p>
+## Objetivo do projeto :round_pushpin:
 
-- Acesso ao figma: [Figma VOOAZ](https://www.figma.com/design/pfqkjOupa5jYwPoLVXwLpS/VOOAZ-DEMODAY?node-id=0-1&t=sgmaTzIDFaJZiQ99-1)
+VOOAZ é um aplicativo mobile que visa facilitar viagens para pessoas com deficiência auditiva ou visual. Através de guias personalizados e uma comunidade inclusiva, buscamos tornar a experiência de viajar mais acessível e prazerosa.
 
-<br/>
+## Tecnologias Utilizadas 📱
 
-<h2>🤝🏾 Equipe de desenvolvimento:</h2>
+* **Plataforma:** Android Studio
+* **Prototipagem:** Figma
+* **Linguagem:** Kotlin
+* **UI:** Jetpack Compose
+* **Banco de dados:** MongoDB
+* **Versionamento:** Git
 
-<table>
-  <tr>
-    <td align="center">
-          <a href="https://github.com/heloomendess" title="Github Heloisa Mendes">
-        <img src="https://avatars.githubusercontent.com/u/108590744?v=4" width="100px;" alt="Foto da Heloisa Mendes" /><br>
-        <sub>
-          <b>Heloisa Mendes</b>
-        </sub>
-      </a>
-    </td>
-    <td align="center">
-     <a href="https://github.com/danalcantara" title="Github Danilo Alcantra">
-        <img src="https://avatars.githubusercontent.com/u/80755693?v=4" width="100px;" alt="Foto do Danilo Alcantra"/><br>
-        <sub>
-          <b>Danilo Alcantra</b>
-        </sub>
-      </a>
-    </td>
-    <td align="center">
-     <a href="https://github.com/cunhagustavo" title="Github Gustavo Cunha">
-        <img src="https://avatars.githubusercontent.com/u/104222391?v=4" width="100px;" alt="Foto do Gustavo Cunha"/><br>
-        <sub>
-          <b>Gustavo Cunha</b>
-        </sub>
-      </a>
-    </td>
-     <td align="center">
-     <a href="https://github.com/IurySven" title="Github Iury Sven">
-        <img src="https://avatars.githubusercontent.com/u/158519389?v=4" width="100px;" alt="Foto do Iury Sven"/><br>
-        <sub>
-          <b>Iury Sven</b>
-        </sub>
-      </a>
-    </td>
-     <td align="center">
-      <a href="https://github.com/AmorimCelio" title="Github Célio Amorim">
-        <img src="https://avatars.githubusercontent.com/u/177969469?v=4" width="100px;" alt="Foto do Célio Amorim"/><br>
-        <sub>
-          <b>Célio Amorim</b>
-        </sub>
-      </a>
-    </td>
-     <td align="center">
-     <a href="https://github.com/KawanTurchiai" title="Github Kawan Turchiai">
-        <img src="https://avatars.githubusercontent.com/u/174805069?v=4" width="100px;" alt="Foto do Kawan Turchiai"/><br>
-        <sub>
-          <b>Kawan Turchiai</b>
-        </sub>
-      </a>
-     </td>
-     <td align="center">
-      <a href="https://github.com/Grazy-Cavalcante" title="Github Grazielly Oliveira">
-        <img src="https://avatars.githubusercontent.com/u/178483915?v=4" width="100px;" alt="Foto da Grazielly Oliveira"/><br>
-        <sub>
-          <b>Grazielly Oliveira</b>
-        </sub>
-      </a>
-    </td>
-     <td align="center">
-      <a href="https://github.com/marianapa1va" title="Mariana Paiva">
-        <img src="https://avatars.githubusercontent.com/u/178483837?v=" width="100px;" alt="Foto da Mariana Paiva"/><br>
-        <sub>
-          <b>Mariana Paiva</b>
-           </sub>
-      </a>
-    </td>
-  </tr>
-</table>
-<br/>
+## Funcionalidades 🤯
 
-## 📱 Siga-nos em nossas redes sociais:
+* **Guias personalizados:** Criação de guias turísticos adaptados às necessidades de cada usuário.
+* **Comunidade:** Espaço para interação entre usuários, troca de experiências e dicas de viagem.
+* **Acessibilidade:** Interface intuitiva e recursos de acessibilidade para garantir uma experiência fluida.
 
-Siga a VOOAZ nas redes sociais para ficar por dentro das últimas novidades e atualizações:
+## Próximos passos ⏭️
 
-- Linkedin [Linkedin VOOAZ](https://www.linkedin.com/company/vooaz/posts/?feedView=all)
-- Instagram: [vooaz_](https://www.instagram.com/vooaz_/)
+### Curto prazo
 
+Criar uma página web do Vooaz para ter um maior alcance.
 
-<hr>
+### Médio prazo
 
-<div>
-<img src="https://img.shields.io/badge/Kotlin-%237F52FF.svg?logo=kotlin&logoColor=white" />
+Fechar parceria com algumas empresas e fundações que têm a mesma visão de acessibilidade que nós.
 
+### Longo Prazo
 
+Expandir a acessibilidade a outros públicos, onde começamos com a inclusão de pessoas em cadeira de rodas.
 
-![Trello](https://img.shields.io/badge/Trello-%23026AA7.svg?style=for-the-badge&logo=Trello&logoColor=white)
-![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
-</div>
+## Equipe 🚀
+
+Conheça os reponsáveis pelo projeto:
+
+![equipe/avatar-heloisa.jpg]
+[Heloida Mendes: Product Owner/Social media](https://github.com/heloomendess)
+![equipe/avatar-danilo.jpg]
+[Danilo Alcantara: Scrum Master](https://github.com/danalcantara)
+![equipe/avatar-gustavo.jpg]
+[Gustavo Cunha: Full-Stack](https://github.com/cunhagustavo)
+![equipe/avatar-iury.png]
+[Iury Costa: Full-Stack](https://github.com/IurySven)
+![equipe/avatar-celio.jpg]
+[Célio Amorim: Front-end/UX](https://github.com/AmorimCelio)
+![equipe/avatar-kawan.jpg]
+[Kawan Turchiai: Front-end](https://github.com/KawanTurchiai)
+![equipe/avatar-grazyelli.jpg]
+[Grazielly Cavalcante: Back-end e Financeiro](https://github.com/Grazy-Cavalcante)
+![equipe/avatar-mariana.jpg]
+[Mariana Paiva: Back-end](https://github.com/marianapa1va)
+
+## Links Úteis 👨🏻‍💻
+
+* [Figma](https://www.figma.com/design/pfqkjOupa5jYwPoLVXwLpS/VOOAZ-DEMODAY)
+* [GitHub :octocat:](https://github.com/heloomendess/Vooaz)
+
+## Nossas redes e contatos ✉️
+
+* [LinkedIn](https://www.linkedin.com/company/vooaz})
+* [Instagram](https://www.instagram.com/vooaz_)
+* [E-mail](mailto:vooaz.mpt@gmail.com)
+
+## Licença 📖
+
+Este projeto está licenciado sob a licença MIT.
+
+## Agradecimentos ❤️
+
+[Instituto Proa](https://www.instagram.com/instituto.proa/)
+[Senac](https://www.instagram.com/senactito/)
