@@ -7,7 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 
 import com.vooazdomain.Vooaz.navigationflow.NavigationFlowSettings
-import com.vooazdomain.Vooaz.splashpage.addSplashPage
+import com.vooazdomain.Vooaz.telas.splashpage.addSplashPage
 import com.vooazdomain.Vooaz.ui.theme.VooazTheme
 
 

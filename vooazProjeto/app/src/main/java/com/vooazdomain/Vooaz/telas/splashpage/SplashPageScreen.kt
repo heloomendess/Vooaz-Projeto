@@ -1,4 +1,4 @@
-package com.vooazdomain.Vooaz.splashpage
+package com.vooazdomain.Vooaz.telas.splashpage
 
 import androidx.compose.runtime.Composable
 import androidx.core.splashscreen.SplashScreen
