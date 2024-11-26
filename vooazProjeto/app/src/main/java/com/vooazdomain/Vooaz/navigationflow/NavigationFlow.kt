@@ -14,6 +14,8 @@ import com.example.app.ui.screens.AzConnectProfileScreen
 import com.vooazdomain.Vooaz.R
 import com.vooazdomain.Vooaz.telas.azconnect.ConnectionsSearchScreen
 import com.vooazdomain.Vooaz.telas.azconnect.connections
+import com.vooazdomain.Vooaz.telas.destinationsScreen.CapitalScreen
+import com.vooazdomain.Vooaz.telas.destinationsScreen.DestinationCard
 import com.vooazdomain.Vooaz.telas.inputflow.InputFullRegisterScreen
 import com.vooazdomain.Vooaz.telas.inputflow.InputScreen
 import com.vooazdomain.Vooaz.telas.inputflow.LoginScreen
@@ -38,10 +40,22 @@ fun NavigationFlowSettings() {
             innerPadding
             NavHost(
                 navController = navController,
-                startDestination = "ConnectionsSearchScreen"
+                startDestination = "CapitalScreen"
             ) {
+                val sampleDestinations = listOf(
+                    DestinationCard("Museu do Ipiranga", R.drawable.museuimg),
+                    DestinationCard("Museu Catavento", R.drawable.museucatavento),
+                    DestinationCard("Museu do Ipiranga", R.drawable.museuimg),
+                    DestinationCard("Museu Catavento", R.drawable.museucatavento),
+                    DestinationCard("Museu do Ipiranga", R.drawable.museuimg),
+                    DestinationCard("Museu Catavento", R.drawable.museucatavento),
+                    DestinationCard("Museu do Ipiranga", R.drawable.museuimg),
+                    DestinationCard("Museu Catavento", R.drawable.museucatavento),
+                )
 
-
+                composable("CapitalScreen") {
+                    CapitalScreen(navController, sampleDestinations)
+                }
                 composable("PlanScreenSuggestion") {
                     PlanSuggestionScreen(navController)
                 }
@@ -106,7 +120,7 @@ fun NavigationFlowSettings() {
         },
         // Adicione a bottomBar apenas quando a rota for "PlanScreenSuggestion"
         bottomBar = {
-            if (currentRoute == "ConnectionsSearchScreen") {
+            if (currentRoute == "ConnectionsSearchScreen" ||  currentRoute == "CapitalScreen") {
                 navegationBar(navController)
             }
         }
