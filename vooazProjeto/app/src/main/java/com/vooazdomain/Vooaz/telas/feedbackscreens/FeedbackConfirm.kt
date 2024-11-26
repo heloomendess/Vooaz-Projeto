@@ -1,6 +1,5 @@
 package com.vooazdomain.Vooaz.telas.feedbackscreens
 
-import FeedbackScreen
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -19,6 +18,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontFamily
+import com.example.feedbackscreen.FeedbackScreen
 import com.vooazdomain.Vooaz.R
 
 @OptIn(ExperimentalMaterial3Api::class)
