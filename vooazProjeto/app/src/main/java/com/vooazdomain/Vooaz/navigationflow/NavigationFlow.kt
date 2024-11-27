@@ -26,6 +26,7 @@ import com.vooazdomain.Vooaz.telas.profile.ProfileScreen
 import com.vooazdomain.Vooaz.telas.resetpassword.ChangePasswordScreen
 import com.vooazdomain.Vooaz.telas.resetpassword.ForgotPasswordPinScreen
 import com.vooazdomain.Vooaz.telas.resetpassword.ForgotPasswordScreen
+import com.vooazdomain.Vooaz.telas.settingScreen.PersonalInfoScreen
 import com.vooazdomain.Vooaz.telas.settingScreen.SettingsScreen
 
 import navegationBar
@@ -40,7 +41,7 @@ fun NavigationFlowSettings() {
             innerPadding
             NavHost(
                 navController = navController,
-                startDestination = "CapitalScreen"
+                startDestination = "PersonalInfoScreen"
             ) {
                 val sampleDestinations = listOf(
                     DestinationCard("Museu do Ipiranga", R.drawable.museuimg),
@@ -55,6 +56,9 @@ fun NavigationFlowSettings() {
 
                 composable("CapitalScreen") {
                     CapitalScreen(navController, sampleDestinations)
+                }
+                composable("PersonalInfoScreen") {
+                    PersonalInfoScreen(navController)
                 }
                 composable("PlanScreenSuggestion") {
                     PlanSuggestionScreen(navController)
