@@ -82,14 +82,6 @@ fun SettingsScreen(navController: NavController) {
                     navroute = "ForgotPasswordPin"
                 )
             }
-            item {
-                SettingsOption(
-                    label = "Score",
-                    image = painterResource(id = R.drawable.staricon),
-                    navigation = navController,
-                    navroute = "ForgotPasswordPin"
-                )
-            }
             // Ícone fictício substituído por outro válido
             item {
                 SettingsOption(
@@ -112,12 +104,12 @@ fun SettingsScreen(navController: NavController) {
             }
             // Assinatura
             item {
-                SectionTitle("Assinatura")
+                SectionTitle("Sobre nós")
             }
             item {
                 SettingsOption(
-                    label = "Planos",
-                    image = painterResource(id = R.drawable.signicon),
+                    label = "Sobre nós",
+                    image = painterResource(id = R.drawable.ico_check),
                     navigation = navController,
                     navroute = "ForgotPasswordPin"
                 )
