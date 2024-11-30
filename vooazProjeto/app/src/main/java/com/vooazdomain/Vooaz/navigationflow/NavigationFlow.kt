@@ -16,6 +16,7 @@ import com.vooazdomain.Vooaz.telas.azconnect.ConnectionsSearchScreen
 import com.vooazdomain.Vooaz.telas.azconnect.connections
 import com.vooazdomain.Vooaz.telas.destinationsScreen.CapitalScreen
 import com.vooazdomain.Vooaz.telas.destinationsScreen.DestinationCard
+import com.vooazdomain.Vooaz.telas.home.HomePageScreen
 import com.vooazdomain.Vooaz.telas.inputflow.InputFullRegisterScreen
 import com.vooazdomain.Vooaz.telas.inputflow.InputScreen
 import com.vooazdomain.Vooaz.telas.inputflow.LoginScreen
@@ -41,7 +42,7 @@ fun NavigationFlowSettings() {
             innerPadding
             NavHost(
                 navController = navController,
-                startDestination = "PersonalInfoScreen"
+                startDestination = "HomePageScreen"
             ) {
                 val sampleDestinations = listOf(
                     DestinationCard("Museu do Ipiranga", R.drawable.museuimg),
@@ -56,6 +57,9 @@ fun NavigationFlowSettings() {
 
                 composable("CapitalScreen") {
                     CapitalScreen(navController, sampleDestinations)
+                }
+                composable("HomePageScreen") {
+                    HomePageScreen(navController)
                 }
                 composable("PersonalInfoScreen") {
                     PersonalInfoScreen(navController)
