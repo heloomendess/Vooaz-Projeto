@@ -12,6 +12,7 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.app.ui.screens.AzConnectProfileScreen
 import com.vooazdomain.Vooaz.R
+import com.vooazdomain.Vooaz.telas.aboutus.AboutUsScreen
 import com.vooazdomain.Vooaz.telas.azconnect.ConnectionsSearchScreen
 import com.vooazdomain.Vooaz.telas.azconnect.connections
 import com.vooazdomain.Vooaz.telas.destinationsScreen.CapitalScreen
@@ -42,7 +43,7 @@ fun NavigationFlowSettings() {
             innerPadding
             NavHost(
                 navController = navController,
-                startDestination = "HomePageScreen"
+                startDestination = "AboutUsScreen"
             ) {
                 val sampleDestinations = listOf(
                     DestinationCard("Museu do Ipiranga", R.drawable.museuimg),
@@ -55,6 +56,9 @@ fun NavigationFlowSettings() {
                     DestinationCard("Museu Catavento", R.drawable.museucatavento),
                 )
 
+                composable("AboutUsScreen") {
+                    AboutUsScreen(navController)
+                }
                 composable("CapitalScreen") {
                     CapitalScreen(navController, sampleDestinations)
                 }
