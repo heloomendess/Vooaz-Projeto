@@ -8,6 +8,7 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 
 import com.vooazdomain.Vooaz.navigationflow.NavigationFlowSettings
 import com.vooazdomain.Vooaz.telas.splashpage.addSplashPage
+
 import com.vooazdomain.Vooaz.ui.theme.VooazTheme
 
 
@@ -21,6 +22,7 @@ class MainActivity : ComponentActivity() {
         addSplashPage(splashScreen)
         setContent {
             VooazTheme() {
+
 
                 NavigationFlowSettings()
             }
