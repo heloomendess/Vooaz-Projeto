@@ -1,4 +1,4 @@
-package com.vooazdomain.Vooaz.telas
+package com.vooazdomain.Vooaz.telas.plan
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
@@ -16,6 +16,7 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
@@ -28,8 +29,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.font.Font
-import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.res.stringResource
+
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -39,30 +40,28 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.vooazdomain.Vooaz.R
 import com.vooazdomain.Vooaz.ui.theme.VooazTheme
+import com.vooazdomain.Vooaz.ui.theme.poppinsFontFamily
 
-val poppinsFontFamily = FontFamily(
-    Font(R.font.poppinsregular, FontWeight.Normal),
-    Font(R.font.poppinsbold, FontWeight.Bold)
-)
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Planos(navController: NavController) {
+fun Plans(navController: NavController) {
     val refreshing = remember { mutableStateOf(false) }
     val coroutineScope = rememberCoroutineScope()
-
+    var someThemes = MaterialTheme.colorScheme
+    
     Scaffold(
         modifier = Modifier.fillMaxSize(),
-        containerColor = Color(0xFF0E2C8F),
+        containerColor = someThemes.background,
         topBar = {
             TopAppBar(
                 title = { Text(text = "") },
-                colors = TopAppBarDefaults.smallTopAppBarColors(containerColor = Color(0xFF0E2C8F)),
+                colors = TopAppBarDefaults.smallTopAppBarColors(containerColor = someThemes.background),
                 navigationIcon = {
                     IconButton(onClick = { }) {
                         Image(
                             painter = painterResource(id = R.drawable.arrowback),
-                            contentDescription = "Voltar",
+                            contentDescription =  stringResource(R.string.voltar),
                             modifier = Modifier.size(50.dp)
                         )
                     }
@@ -78,11 +77,11 @@ fun Planos(navController: NavController) {
             ) {
                 item {
                     Text(
-                        text = "Explore Nossos\nPlanos!",
+                        stringResource(R.string.explore_nossos_planos),
                         fontFamily = poppinsFontFamily,
                         fontWeight = FontWeight.Bold,
                         fontSize = 30.sp,
-                        color = Color(0xFFF4B942),
+                        color = someThemes.onTertiary,
                         modifier = Modifier.padding(top = 16.dp),
                         textAlign = TextAlign.Center
                     )
@@ -95,7 +94,7 @@ fun Planos(navController: NavController) {
                         modifier = Modifier
                             .padding(16.dp)
                             .background(Color(0xFF97D8C4), RoundedCornerShape(30.dp))
-                            .border(BorderStroke(2.dp, Color.White), RoundedCornerShape(30.dp))
+                            .border(BorderStroke(2.dp, someThemes.onSecondaryContainer), RoundedCornerShape(30.dp))
                             .padding(16.dp)
                     ) {
                         Column(
@@ -113,17 +112,17 @@ fun Planos(navController: NavController) {
                             Button(
                                 onClick = {},
                                 colors = ButtonDefaults.buttonColors(
-                                    containerColor = Color(0xFFF4B942),
-                                    contentColor = Color.Black
+                                    containerColor = someThemes.onTertiary,
+                                    contentColor = someThemes.onSecondary
                                 ),
                                 shape = RoundedCornerShape(30.dp),
-                                border = BorderStroke(1.dp, Color.Black),
+                                border = BorderStroke(1.dp, someThemes.onSecondary),
                                 modifier = Modifier
                                     .padding(top = 14.dp, bottom = 10.dp)
 
                             ) {
                                 Text(
-                                    text = "Continuar Grátis",
+                                    stringResource(R.string.continuar_gratis),
                                     fontFamily = poppinsFontFamily,
                                     fontWeight = FontWeight.Bold,
                                     fontSize = 20.sp
@@ -140,7 +139,7 @@ fun Planos(navController: NavController) {
                         modifier = Modifier
                             .padding(16.dp)
                             .background(Color(0xFF6B9AC4), RoundedCornerShape(30.dp))
-                            .border(BorderStroke(2.dp, Color.White), RoundedCornerShape(30.dp))
+                            .border(BorderStroke(2.dp, someThemes.onSecondaryContainer), RoundedCornerShape(30.dp))
                             .padding(16.dp)
                     ) {
                         Column(
@@ -159,16 +158,16 @@ fun Planos(navController: NavController) {
                                 onClick = {},
                                 colors = ButtonDefaults.buttonColors(
                                     containerColor = Color(0xFF97D8C4),
-                                    contentColor = Color.Black
+                                    contentColor = someThemes.onSecondary
                                 ),
                                 shape = RoundedCornerShape(30.dp),
-                                border = BorderStroke(1.dp, Color.Black),
+                                border = BorderStroke(1.dp, someThemes.onSecondary),
                                 modifier = Modifier
                                     .padding(top = 14.dp, bottom = 10.dp)
 
                             ) {
                                 Text(
-                                    text = "Obter Plano",
+                                    text = stringResource(R.string.obter_plano),
                                     fontFamily = poppinsFontFamily,
                                     fontWeight = FontWeight.Bold,
                                     fontSize = 20.sp
@@ -183,8 +182,8 @@ fun Planos(navController: NavController) {
                     Box(
                         modifier = Modifier
                             .padding(16.dp)
-                            .background(Color(0xFFF4B942), RoundedCornerShape(30.dp))
-                            .border(BorderStroke(2.dp, Color.White), RoundedCornerShape(30.dp))
+                            .background(someThemes.onTertiary, RoundedCornerShape(30.dp))
+                            .border(BorderStroke(2.dp, someThemes.onSecondaryContainer), RoundedCornerShape(30.dp))
                             .padding(16.dp)
                     ) {
                         Column(
@@ -203,16 +202,16 @@ fun Planos(navController: NavController) {
                                 onClick = {},
                                 colors = ButtonDefaults.buttonColors(
                                     containerColor = Color(0xFF6B9AC4),
-                                    contentColor = Color.Black
+                                    contentColor = someThemes.onSecondary
                                 ),
                                 shape = RoundedCornerShape(30.dp),
-                                border = BorderStroke(1.dp, Color.Black),
+                                border = BorderStroke(1.dp, someThemes.onSecondary),
                                 modifier = Modifier
                                     .padding(top = 14.dp, bottom = 10.dp)
 
                             ) {
                                 Text(
-                                    text = "Obter Plano",
+                                    text = stringResource(R.string.obter_plano),
                                     fontFamily = poppinsFontFamily,
                                     fontWeight = FontWeight.Bold,
                                     fontSize = 20.sp
@@ -229,8 +228,8 @@ fun Planos(navController: NavController) {
 
 @Preview(showBackground = true, widthDp = 390, heightDp = 800 )
 @Composable
-fun PlanosPreview() {
+fun PlansPreview() {
     VooazTheme {
-        Planos(rememberNavController())
+        Plans(rememberNavController())
     }
 }

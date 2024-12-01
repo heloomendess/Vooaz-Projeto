@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace = "com.vooazdomain.Vooaz"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.vooazdomain.Vooaz"
         minSdk = 31
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -51,8 +51,8 @@ android {
 
 dependencies {
 
-    implementation("androidx.navigation:navigation-compose:2.8.0")
-    implementation("androidx.core:core-splashscreen:1.0.0")
+    implementation("androidx.navigation:navigation-compose:2.8.4")
+    implementation("androidx.core:core-splashscreen:1.0.1")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)

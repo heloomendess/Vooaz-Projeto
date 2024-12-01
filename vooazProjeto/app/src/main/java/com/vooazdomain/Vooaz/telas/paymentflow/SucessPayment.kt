@@ -1,4 +1,4 @@
-package com.vooazdomain.Vooaz.telas
+package com.vooazdomain.Vooaz.telas.paymentflow
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
@@ -10,6 +10,7 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
@@ -26,24 +27,28 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.vooazdomain.Vooaz.R
+
+import com.vooazdomain.Vooaz.ui.theme.*  // Importando as cores do tema
 import com.vooazdomain.Vooaz.ui.theme.VooazTheme
+import androidx.compose.ui.res.stringResource
 
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun PagamentoFeito(navController: NavController) {
+    var someTheme=MaterialTheme.colorScheme
     Scaffold(
         modifier = Modifier.fillMaxSize(),
-        containerColor = Color(0xFF0E2C8F),
+        containerColor =  someTheme.background,
         topBar = {
             TopAppBar(
                 title = { Text(text = "") },
-                colors = TopAppBarDefaults.smallTopAppBarColors(containerColor = Color(0xFF0E2C8F)),
+                colors = TopAppBarDefaults.smallTopAppBarColors(containerColor = someTheme.background),
                 navigationIcon = {
                     IconButton(onClick = { }) {
                         Image(
                             painter = painterResource(id = R.drawable.arrowback),
-                            contentDescription = "Voltar",
+                            contentDescription = stringResource(id = R.string.voltar),
                             modifier = Modifier.size(50.dp)
                         )
                     }
@@ -52,7 +57,7 @@ fun PagamentoFeito(navController: NavController) {
                     IconButton(onClick = { }) {
                         Image(
                             painter = painterResource(id = R.drawable.close),
-                            contentDescription = "Fechar",
+                            contentDescription = stringResource(id = R.string.fechar),
                             modifier = Modifier.size(50.dp)
                         )
                     }
@@ -68,30 +73,31 @@ fun PagamentoFeito(navController: NavController) {
             ) {
                 Image(
                     painter = painterResource(id = R.drawable.pagamento_feito),
-                    contentDescription = "",
+                    contentDescription = stringResource(id = R.string.pagamento_feito_desc),
                     modifier = Modifier
                         .size(455.dp)
                         .padding(
                             top = 0.dp,
-                            bottom = 40.dp)
-
+                            bottom = 40.dp
+                        )
                 )
                 Button(
                     onClick = { },
                     colors = ButtonDefaults.buttonColors(
-                        containerColor = Color(0xFFF4B942),
-                        contentColor = Color.Black
+                        containerColor = someTheme.onTertiary,
+                        contentColor = someTheme.onSecondary
                     ),
                     shape = RoundedCornerShape(30.dp),
-                    border = androidx.compose.foundation.BorderStroke(2.dp, Color.Black),
+                    border = androidx.compose.foundation.BorderStroke(2.dp, someTheme.onSecondary),
                     modifier = Modifier
                         .align(Alignment.Center)
                         .padding(
                             top = 60.dp,
-                            bottom = 0.dp)
+                            bottom = 0.dp
+                        )
                 ) {
                     Text(
-                        text = "Entrar",
+                        text = stringResource(id = R.string.entrar),
                         fontSize = 30.sp,
                         fontWeight = FontWeight.Bold,
                         fontFamily = poppinsFontFamily,
@@ -101,7 +107,6 @@ fun PagamentoFeito(navController: NavController) {
         }
     )
 }
-
 
 @Preview(showBackground = true, widthDp = 390, heightDp = 800 )
 @Composable
