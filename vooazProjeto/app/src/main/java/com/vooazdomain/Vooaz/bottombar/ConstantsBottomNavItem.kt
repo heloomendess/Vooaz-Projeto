@@ -6,7 +6,7 @@ object ConstantsBottomNavItem {
         BottomNavItem(
             label = "Chat",
             icon = R.drawable.chatbubble,
-            route = "test/AirPlane",
+            route = "Conexoes",
             size = 32
         ),
         BottomNavItem(
@@ -19,21 +19,21 @@ object ConstantsBottomNavItem {
         BottomNavItem(
             label = "Airplane",
             icon = R.drawable.airplaneicon,
-            route = "test/AirPlane",
+            route = "HomePageScreen",
             size = 32
 
         ),
         BottomNavItem(
             label = "Tour guides",
             icon = R.drawable.tourguides,
-            route = "test/Tour guides",
+            route = "GuidesScreen",
             size = 32
 
         ),
         BottomNavItem(
             label = "Settings",
             icon = R.drawable.settingsicon,
-            route = "test/Settings",
+            route = "SettingsScreen",
             size = 26
 
         ),

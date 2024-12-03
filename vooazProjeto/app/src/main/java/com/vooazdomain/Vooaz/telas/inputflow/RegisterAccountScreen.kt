@@ -230,7 +230,7 @@ fun RegisterAccountContent(navController: NavController) {
                 }
 
                 Button(
-                    onClick = {},
+                    onClick = {  navController.navigate(route = "InputFullRegisterScreen")},
                     shape = RoundedCornerShape(10.dp),
                     modifier = Modifier.padding(top = 10.dp).width(310.dp).height(50.dp),
                     colors = ButtonDefaults.buttonColors(containerColor =MaterialTheme.colorScheme.onTertiary),  // Usando a cor amarela do tema

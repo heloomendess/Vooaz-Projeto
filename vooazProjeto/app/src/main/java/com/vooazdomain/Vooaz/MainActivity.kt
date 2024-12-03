@@ -4,11 +4,8 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 
 import com.vooazdomain.Vooaz.navigationflow.NavigationFlowSettings
-import com.vooazdomain.Vooaz.telas.splashpage.addSplashPage
-
 import com.vooazdomain.Vooaz.ui.theme.VooazTheme
 
 
@@ -17,13 +14,8 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-        val splashScreen = installSplashScreen()
-
-        addSplashPage(splashScreen)
         setContent {
             VooazTheme() {
-
-
                 NavigationFlowSettings()
             }
 

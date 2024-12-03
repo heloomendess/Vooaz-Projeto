@@ -34,6 +34,7 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.vooazdomain.Vooaz.R
 import com.vooazdomain.Vooaz.ui.theme.poppinsFontFamily
+import navigationBar
 
 
 @Composable
@@ -42,15 +43,18 @@ fun HomePageScreen(navController: NavController) {
         topBar = {
             // Cabeçalho com logo e notificações
             HeaderSection()
-
-        }
+        },
+        bottomBar = {
+            navigationBar(navController)
+        },
+        containerColor = MaterialTheme.colorScheme.onSecondaryContainer
     ) {
         innerpadding ->
         Column(
             modifier = Modifier
                 .fillMaxSize().padding(innerpadding)
                 .verticalScroll(rememberScrollState())
-                .background(MaterialTheme.colorScheme.onSecondaryContainer) // Fundo cinza claro
+
         ) {
 
 
@@ -67,6 +71,8 @@ fun HomePageScreen(navController: NavController) {
             // Praias perto de você
             SectionTitle("Praias:")
             BeachSection()
+            //Spacer(modifier = Modifier.height(72.dp))
+            
         }
     }
 }

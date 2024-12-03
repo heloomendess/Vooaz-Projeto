@@ -2,6 +2,7 @@ package com.vooazdomain.Vooaz.telas.inputflow
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
@@ -108,6 +109,7 @@ fun InputScreen(navController: NavController) {
             Text(
                 text = stringResource(id = R.string.know_more),
                 fontWeight = FontWeight.Bold,
+                color = someTheme.onSecondary,
                 fontFamily = poppinsFontFamily,
                 modifier = Modifier.padding(end = 5.dp)
             )
@@ -117,6 +119,9 @@ fun InputScreen(navController: NavController) {
                 color = MaterialTheme.colorScheme.onTertiary,
                 fontWeight = FontWeight.Bold,
                 fontFamily = poppinsFontFamily,
+                modifier = Modifier.clickable {
+                    navController.navigate("AboutUsScreen")
+                }
             )
         }
     }
