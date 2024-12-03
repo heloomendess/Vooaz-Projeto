@@ -25,6 +25,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.vooazdomain.Vooaz.R
+import navigationBar
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -56,7 +57,10 @@ fun SettingsScreen(navController: NavController) {
                 colors = TopAppBarDefaults.smallTopAppBarColors(containerColor = headerBackgroundColor)
             )
         },
-        containerColor = backgroundColor
+        bottomBar = {
+            navigationBar(navController)
+        },
+        containerColor = MaterialTheme.colorScheme.onSecondaryContainer
     ) { padding ->
         LazyColumn(
             modifier = Modifier
@@ -137,7 +141,9 @@ fun SettingsScreen(navController: NavController) {
                     navroute = "ForgotPasswordPin"
                 )
             }
+
         }
+
     }
 }
 
@@ -157,7 +163,7 @@ fun HeaderSection() {
                     .width(87.dp)
                     .height(87.dp),
                 painter = painterResource(id = R.drawable.examplepeopleprofile),
-                contentDescription = "image description",
+                contentDescription = "",
                 contentScale = ContentScale.FillBounds
             )
 
@@ -210,7 +216,7 @@ fun SectionTitle(title: String) {
 fun SettingsOption(label: String, image: Painter, navigation: NavController, navroute: String) {
     Row(
         Modifier
-            .width(330.dp)
+            .width(350.dp)
             .padding(start = 30.dp, top = 10.dp)
             .height(70.dp)
             .background(color = Color(0xFF4059AD), shape = RoundedCornerShape(size = 15.dp)).clickable {

@@ -1,4 +1,4 @@
-package com.vooazdomain.Vooaz.componentes
+package com.vooazdomain.Vooaz.telas.azconnect
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
@@ -26,12 +26,12 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.vooazdomain.Vooaz.R
-import com.vooazdomain.Vooaz.telas.poppinsFontFamily
 import com.vooazdomain.Vooaz.ui.theme.VooazTheme
+import com.vooazdomain.Vooaz.ui.theme.poppinsFontFamily
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Conexcoes(navController: NavController) {
+fun Conexoes(navController: NavController) {
     val refreshing = remember { mutableStateOf(false) }
     val coroutineScope = rememberCoroutineScope()
 
@@ -354,6 +354,6 @@ fun Conexcoes(navController: NavController) {
 @Composable
 fun PlanosPreview() {
     VooazTheme {
-        Conexcoes(rememberNavController())
+        Conexoes(rememberNavController())
     }
 }

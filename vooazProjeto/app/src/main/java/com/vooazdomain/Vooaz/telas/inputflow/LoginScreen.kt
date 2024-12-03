@@ -138,7 +138,9 @@ fun LoginScreen(navController: NavController) {
             fontFamily = poppinsFontFamily
         )
         Button(
-            onClick = {},
+            onClick = {
+                navController.navigate(route = "LoadingScreen/HomePageScreen")
+            },
             shape = RoundedCornerShape(10.dp),
             modifier = Modifier
                 .padding(top = 30.dp)

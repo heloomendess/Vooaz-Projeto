@@ -33,16 +33,24 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.vooazdomain.Vooaz.R
 import com.vooazdomain.Vooaz.telas.destinationsScreen.TopBar
+import navigationBar
+
 
 @Composable
-fun GuidesScreen() {
+fun GuidesScreen(navController: NavController) {
     Scaffold(
 
         topBar = {
             TopBar()
-        }
+        },
+        bottomBar = {
+            navigationBar(navController)
+        },
+        containerColor = MaterialTheme.colorScheme.onSecondaryContainer
     ) { innerpadding ->
         Box(
             modifier = Modifier.fillMaxSize().background(Color(0xFFF5F5F5)).padding(innerpadding),
@@ -69,7 +77,9 @@ fun GuidesScreen() {
                     Spacer(
                         modifier = Modifier.height(16.dp))
                     Row (modifier = Modifier.padding(end = 30.dp)){
-                        Icon(imageVector = Icons.Default.ArrowBack, contentDescription = "back", modifier = Modifier.padding(end = 30.dp).size(40.dp))
+                        Icon(imageVector = Icons.Default.ArrowBack, contentDescription = "back", modifier = Modifier.padding(end = 30.dp).size(40.dp).clickable {
+                            navController.popBackStack()
+                        })
                         HeaderGuidesFilter(MaterialTheme.colorScheme.onTertiary)
                     }
                     Spacer(modifier = Modifier.height(16.dp))
@@ -132,6 +142,8 @@ fun GuidesScreen() {
                     }
                 }
             }
+            Spacer(modifier = Modifier.height(72.dp))
+
         }
     }
 }
@@ -281,5 +293,5 @@ data class Guide(
 @Preview(showBackground = true)
 @Composable
 fun GuidesScreenPreview() {
-    GuidesScreen()
+    GuidesScreen(rememberNavController())
 }

@@ -129,7 +129,7 @@ fun InputFullRegisterScreen(navController: NavController) {
 
             // Botão de ação
             Button(
-                onClick = { /* Ação ao clicar no botão */ },
+                onClick = { navController.navigate(route = "LoadingScreen/HomePageScreen") },
                 modifier = Modifier
                     .width(329.dp)
                     .height(60.dp),
